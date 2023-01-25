@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "json-server": "^0.17.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0"
+  }
+}

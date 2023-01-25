@@ -1,0 +1,184 @@
+{
+    "employees": [
+      {
+        "userName": "PD31717",
+        "password": "PD440@43",
+        "firstName": "Nour",
+        "lastName": "Yasser",
+        "address": "Damietta",
+        "email": "ny@asd.xz",
+        "age": "25",
+        "isConfirmed": true,
+        "role": "employee",
+        "attendance": [
+          {
+            "date": "23/01/2023",
+            "arrival_time": "14:28:10",
+            "departure_time": "15:30:00",
+            "status": "late",
+            "delay_period": 358.16666666666663
+          }
+        ],
+        "id": 1
+      },
+      {
+        "userName": "PD31319",
+        "password": "PD412@43",
+        "firstName": "Yahya",
+        "lastName": "Khaled",
+        "address": "Cairo",
+        "email": "yk@hgf.hg",
+        "age": "28",
+        "role": "employee",
+        "isConfirmed": true,
+        "attendance": [
+          {
+            "date": "23/01/2023",
+            "arrival_time": "13:51:25",
+            "departure_time": "15:30:00",
+            "status": "late",
+            "delay_period": 321.41666666666663
+          },
+          {
+            "date": "24/01/2023",
+            "arrival_time": "4:39:7",
+            "departure_time": "15:30:00",
+            "status": "late",
+            "delay_period": 230.88333333333333
+          }
+        ],
+        "id": 2
+      },
+      {
+        "userName": "PD25212",
+        "password": "PD746@43",
+        "firstName": "Sayed",
+        "lastName": "Ibrahim",
+        "address": "Damietta",
+        "email": "sayib@asc.bv",
+        "age": "26",
+        "role": "securityMan",
+        "isConfirmed": true,
+        "attendance": [
+          {
+            "date": "24/01/2023",
+            "arrival_time": "09:16:11",
+            "departure_time": "15:30:00",
+            "status": "late",
+            "delay_period": 46.18333333333333
+          }
+        ],
+        "id": 3
+      },
+      {
+        "userName": "PD57059",
+        "password": "PD930@43",
+        "firstName": "Saad",
+        "lastName": "Samy",
+        "address": "Damietta",
+        "email": "sayib@asc.bv",
+        "age": "35",
+        "role": "employee",
+        "isConfirmed": false,
+        "attendance": [],
+        "id": 4
+      },
+      {
+        "userName": "PD00131",
+        "password": "PD059@43",
+        "firstName": "Samir",
+        "lastName": "Adel",
+        "address": "Damietta",
+        "email": "samir@sa.bv",
+        "age": "25",
+        "role": "employee",
+        "isConfirmed": false,
+        "attendance": [],
+        "id": 5
+      },
+      {
+        "userName": "PD45859",
+        "password": "PD071@43",
+        "firstName": "Mohamed",
+        "lastName": "Saad",
+        "address": "Mansoura",
+        "email": "sayib@asc.bv",
+        "age": "23",
+        "role": "securityMan",
+        "isConfirmed": true,
+        "attendance": [],
+        "id": 6
+      },
+      {
+        "userName": "PD01043",
+        "password": "PD887@43",
+        "firstName": "Mariam",
+        "lastName": "Ragab",
+        "address": "Damietta",
+        "email": "mariamragab01@gmail.com",
+        "age": "25",
+        "isConfirmed": true,
+        "role": "employee",
+        "attendance": [
+          {
+            "date": "24/01/2023",
+            "arrival_time": "4:56:48",
+            "departure_time": "15:30:00",
+            "status": "late",
+            "delay_period": 213.2
+          }
+        ],
+        "id": 7
+      },
+      {
+        "userName": "PD18794",
+        "password": "PD274@43",
+        "firstName": "Nasr",
+        "lastName": "Kassem",
+        "address": "Mansoura",
+        "email": "nasr@asd.nbv",
+        "age": "35",
+        "isConfirmed": true,
+        "role": "employee",
+        "attendance": [
+          {
+            "date": "24/01/2023",
+            "arrival_time": "4:15:35",
+            "departure_time": "15:30:00",
+            "status": "late",
+            "delay_period": 254.41666666666669
+          }
+        ],
+        "id": 8
+      }
+    ],
+    "admin": {
+      "userName": "PDITIAdmin",
+      "password": "PDITI@43"
+    },
+    "securityMan": {
+      "userName": "PDITISecurity",
+      "password": "PDITISecurity@43",
+      "firstName": "Samir",
+      "lastName": "Fawzy",
+      "address": "Mansoura",
+      "email": "samir@sa.bv",
+      "age": "27",
+      "attendance": []
+    },
+    "notifications": [
+      {
+        "username": "PD45859",
+        "id": 1
+      },
+      {
+        "username": "PD01043",
+        "id": 2
+      },
+      {"username": "PD18794",
+      "id": 3
+    }
+  ],
+  "attendance-notifications": [],
+  "attendance": []
+}
