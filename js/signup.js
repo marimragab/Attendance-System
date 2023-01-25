@@ -1,12 +1,24 @@
-import { validateFirstNameOnBlur,validateFirstNameOnKeyDown,validatelastNameOnBlur,validatelastNameOnKeyDown,validateEmailOnBlur,validateEmailOnKeyDown,validateAgeOnBlur,validateAgeOnKeyDown,validateAddressOnBlur,validateAddressOnKeyDown} from "./signupEventsHandlers.js";
-window.addEventListener("load", selectDoMElements);
+import {
+  validateFirstNameOnBlur,
+  validateFirstNameOnKeyDown,
+  validatelastNameOnBlur,
+  validatelastNameOnKeyDown,
+  validateEmailOnBlur,
+  validateEmailOnKeyDown,
+  validateAgeOnBlur,
+  validateAgeOnKeyDown,
+  validateAddressOnBlur,
+  validateAddressOnKeyDown,
+} from "./signupEventsHandlers.js";
+window.addEventListener("load", selectDomElements);
 
-function selectDoMElements() {
-  let firstnameInput = document.querySelector("input[name=firstname]");
-  let lastnameInput = document.querySelector("input[name=lastname]");
-  let emailInput = document.querySelector("input[name=email]");
-  let addressInput = document.querySelector("input[name=address]");
-  let ageInput = document.querySelector("input[name=age]");
+function selectDomElements() {
+  const firstnameInput = document.querySelector("input[name=firstname]");
+  const lastnameInput = document.querySelector("input[name=lastname]");
+  const emailInput = document.querySelector("input[name=email]");
+  const addressInput = document.querySelector("input[name=address]");
+  const ageInput = document.querySelector("input[name=age]");
+  const signupButton= document.querySelector("button");
 
   firstnameInput.focus();
   firstnameInput.addEventListener("blur", validateFirstNameOnBlur);
@@ -24,4 +36,9 @@ function selectDoMElements() {
   ageInput.addEventListener("blur", validateAgeOnBlur);
   ageInput.addEventListener("keydown", validateAgeOnKeyDown);
 
+  signupButton.addEventListener('click',validateForm)
+}
+
+function validateForm(){
+    location.replace("http://127.0.0.1:5500/attendance_website/confirmSignup.html")
 }
