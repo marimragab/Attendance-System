@@ -1,20 +1,22 @@
+import { isDuplicateEmail } from "./employeeRequests.js";
+
 function isValidUserName(username) {
   return /^[a-zA-Z]{3,8}$/.test(username.trim());
 }
 
 function isValidEmail(email) {
-  return  /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
+  return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
 }
 
-function isValidAge(age){
-  return /^(23|[3-6][0-9]|5[0-5])$/.test(Number(age))
+function isValidAge(age) {
+  return /^(23|[3-6][0-9]|5[0-5])$/.test(Number(age));
 }
 
-function isValidAddress(address){
- return /^[a-zA-Z0-9\s,'-]*$/.test(address)
+function isValidAddress(address) {
+  return /^[a-zA-Z0-9\s,'-]*$/.test(address);
 }
 
-export function validateFirstNameOnBlur() {
+function validateFirstNameOnBlur() {
   console.log(this);
   console.log(this.value);
   if (!isValidUserName(this.value)) {
@@ -32,17 +34,14 @@ export function validateFirstNameOnBlur() {
   }
 }
 
-export function validateFirstNameOnKeyDown() {
-  // if(isValidUserName(this.value)){
-  //   $(this).css("border-bottom", "2px solid green");
-  // }
+function validateFirstNameOnKeyDown() {
   this.focus();
   $(".firstname-error").addClass("d-none");
+  $(".firstname-done").addClass("d-none");
   $(this).css("border-bottom", "2px solid #dfe7f1");
-
 }
 
-export function validatelastNameOnBlur() {
+function validatelastNameOnBlur() {
   console.log(this);
   console.log(this.value);
   if (!isValidUserName(this.value)) {
@@ -56,25 +55,43 @@ export function validatelastNameOnBlur() {
     $(".lastname-done").removeClass("d-none");
     $(this).css("border-bottom", "2px solid green");
     $(this).css("background", "none");
+    $("select[name=department]").css("background","lightgrey");
+  }
+}
+
+function validatelastNameOnKeyDown() {
+  this.focus();
+  $(".lastname-error").addClass("d-none");
+  $(".lastname-done").addClass("d-none");
+  $(this).css("border-bottom", "2px solid #dfe7f1");
+}
+
+function validateDepartmentOnChange() {
+  if (this.value == "default") {
+    $(".department-error").removeClass("d-none");
+    $(this).css("border-bottom", "2px solid red");
+
+  } else {
+    $(".department-error").addClass("d-none");
+    $(this).css("background","none");
+    $(this).css("border-bottom", "2px solid green");
     $("input[name=email]").focus();
   }
 }
 
-export function validatelastNameOnKeyDown() {
-  // if(isValidUserName(this.value)){
-  //   $(this).css("border-bottom", "2px solid green");
-  // }
-  this.focus();
-  $(".lastname-error").addClass("d-none");
-  $(this).css("border-bottom", "2px solid #dfe7f1");
-
-}
-
-export function validateEmailOnBlur() {
-  if (!isValidEmail(this.value)) {
+async function validateEmailOnBlur() {
+  let isEmailExistBefore = await isDuplicateEmail(this.value);
+  console.log(isEmailExistBefore);
+  if (isValidEmail(this.value) && isEmailExistBefore) {
+    console.log("Email Present Before");
+    $(".email-duplicate").removeClass("d-none");
+    $(".email-done").addClass("d-none");
+    $(".email-error").addClass("d-none");
+  } else if (!isValidEmail(this.value)) {
     this.focus();
     this.select();
     $(".email-error").removeClass("d-none");
+    $(".email-duplicate").addClass("d-none");
     $(".email-done").addClass("d-none");
     $(this).css("border-bottom", "2px solid red");
   } else {
@@ -86,17 +103,16 @@ export function validateEmailOnBlur() {
   }
 }
 
-export function validateEmailOnKeyDown() {
-  // if(isValidUserName(this.value)){
-  //   $(this).css("border-bottom", "2px solid green");
-  // }
+function validateEmailOnKeyDown() {
   this.focus();
   $(".email-error").addClass("d-none");
+  $(".email-done").addClass("d-none");
+  $(".email-duplicate").addClass("d-none");
   $(this).css("border-bottom", "2px solid #dfe7f1");
 }
 
-export function validateAddressOnBlur() {
-  if (!isValidAddress(this.value)) {
+function validateAddressOnBlur() {
+  if (!isValidAddress(this.value) || !this.value) {
     this.focus();
     this.select();
     $(".address-error").removeClass("d-none");
@@ -107,16 +123,18 @@ export function validateAddressOnBlur() {
     $(".address-done").removeClass("d-none");
     $(this).css("border-bottom", "2px solid green");
     $(this).css("background", "none");
+    $("input[name=age]").focus();
   }
 }
 
-export function validateAddressOnKeyDown() {
+function validateAddressOnKeyDown() {
   this.focus();
   $(".address-error").addClass("d-none");
+  $(".address-done").addClass("d-none");
   $(this).css("border-bottom", "2px solid #dfe7f1");
 }
 
-export function validateAgeOnBlur() {
+function validateAgeOnBlur() {
   if (!isValidAge(this.value)) {
     this.focus();
     this.select();
@@ -131,8 +149,27 @@ export function validateAgeOnBlur() {
   }
 }
 
-export function validateAgeOnKeyDown() {
+function validateAgeOnKeyDown() {
   this.focus();
   $(".age-error").addClass("d-none");
+  $(".age-done").addClass("d-none");
   $(this).css("border-bottom", "2px solid #dfe7f1");
 }
+
+export {
+  isValidUserName,
+  isValidEmail,
+  isValidAge,
+  isValidAddress,
+  validateFirstNameOnBlur,
+  validatelastNameOnBlur,
+  validateEmailOnBlur,
+  validateAddressOnBlur,
+  validateAgeOnBlur,
+  validateFirstNameOnKeyDown,
+  validatelastNameOnKeyDown,
+  validateEmailOnKeyDown,
+  validateAddressOnKeyDown,
+  validateAgeOnKeyDown,
+  validateDepartmentOnChange,
+};

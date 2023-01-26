@@ -1,182 +1,608 @@
 {
-    "employees": [
-      {
-        "userName": "PD31717",
-        "password": "PD440@43",
-        "firstName": "Nour",
-        "lastName": "Yasser",
-        "address": "Damietta",
-        "email": "ny@asd.xz",
-        "age": "25",
-        "isConfirmed": true,
-        "role": "employee",
-        "attendance": [
-          {
-            "date": "23/01/2023",
-            "arrival_time": "14:28:10",
-            "departure_time": "15:30:00",
-            "status": "late",
-            "delay_period": 358.16666666666663
-          }
-        ],
-        "id": 1
-      },
-      {
-        "userName": "PD31319",
-        "password": "PD412@43",
-        "firstName": "Yahya",
-        "lastName": "Khaled",
-        "address": "Cairo",
-        "email": "yk@hgf.hg",
-        "age": "28",
-        "role": "employee",
-        "isConfirmed": true,
-        "attendance": [
-          {
-            "date": "23/01/2023",
-            "arrival_time": "13:51:25",
-            "departure_time": "15:30:00",
-            "status": "late",
-            "delay_period": 321.41666666666663
-          },
-          {
-            "date": "24/01/2023",
-            "arrival_time": "4:39:7",
-            "departure_time": "15:30:00",
-            "status": "late",
-            "delay_period": 230.88333333333333
-          }
-        ],
-        "id": 2
-      },
-      {
-        "userName": "PD25212",
-        "password": "PD746@43",
-        "firstName": "Sayed",
-        "lastName": "Ibrahim",
-        "address": "Damietta",
-        "email": "sayib@asc.bv",
-        "age": "26",
-        "role": "securityMan",
-        "isConfirmed": true,
-        "attendance": [
-          {
-            "date": "24/01/2023",
-            "arrival_time": "09:16:11",
-            "departure_time": "15:30:00",
-            "status": "late",
-            "delay_period": 46.18333333333333
-          }
-        ],
-        "id": 3
-      },
-      {
-        "userName": "PD57059",
-        "password": "PD930@43",
-        "firstName": "Saad",
-        "lastName": "Samy",
-        "address": "Damietta",
-        "email": "sayib@asc.bv",
-        "age": "35",
-        "role": "employee",
-        "isConfirmed": false,
-        "attendance": [],
-        "id": 4
-      },
-      {
-        "userName": "PD00131",
-        "password": "PD059@43",
-        "firstName": "Samir",
-        "lastName": "Adel",
-        "address": "Damietta",
-        "email": "samir@sa.bv",
-        "age": "25",
-        "role": "employee",
-        "isConfirmed": false,
-        "attendance": [],
-        "id": 5
-      },
-      {
-        "userName": "PD45859",
-        "password": "PD071@43",
-        "firstName": "Mohamed",
-        "lastName": "Saad",
-        "address": "Mansoura",
-        "email": "sayib@asc.bv",
-        "age": "23",
-        "role": "securityMan",
-        "isConfirmed": true,
-        "attendance": [],
-        "id": 6
-      },
-      {
-        "userName": "PD01043",
-        "password": "PD887@43",
-        "firstName": "Mariam",
-        "lastName": "Ragab",
-        "address": "Damietta",
-        "email": "mariamragab01@gmail.com",
-        "age": "25",
-        "isConfirmed": true,
-        "role": "employee",
-        "attendance": [
-          {
-            "date": "24/01/2023",
-            "arrival_time": "4:56:48",
-            "departure_time": "15:30:00",
-            "status": "late",
-            "delay_period": 213.2
-          }
-        ],
-        "id": 7
-      },
-      {
-        "userName": "PD18794",
-        "password": "PD274@43",
-        "firstName": "Nasr",
-        "lastName": "Kassem",
-        "address": "Mansoura",
-        "email": "nasr@asd.nbv",
-        "age": "35",
-        "isConfirmed": true,
-        "role": "employee",
-        "attendance": [
-          {
-            "date": "24/01/2023",
-            "arrival_time": "4:15:35",
-            "departure_time": "15:30:00",
-            "status": "late",
-            "delay_period": 254.41666666666669
-          }
-        ],
-        "id": 8
-      }
-    ],
-    "admin": {
-      "userName": "PDITIAdmin",
-      "password": "PDITI@43"
+  "employees": [
+    {
+      "id": 1,
+      "username": "ncpssz3",
+      "password": "FLCDEhYlAk",
+      "firstName": "Arthur",
+      "lastName": "Gibson",
+      "address": "Riverside-Fahey Bridge",
+      "email": "Drew_Koelpin79@yahoo.com",
+      "age": 37,
+      "role": "employee",
+      "isconfirmed": true,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/667.jpg"
     },
-    "securityMan": {
-      "userName": "PDITISecurity",
-      "password": "PDITISecurity@43",
+    {
+      "id": 2,
+      "username": "uv2jdzj",
+      "password": "j9fxPa48n1",
+      "firstName": "Brenden",
+      "lastName": "Stokes",
+      "address": "Yadirashire-Madelynn Tunnel",
+      "email": "Eldred40@gmail.com",
+      "age": 26,
+      "role": "securityman",
+      "isconfirmed": true,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/488.jpg"
+    },
+    {
+      "id": 3,
+      "username": "7pjz0l0",
+      "password": "U6i6J_rnkh",
+      "firstName": "Timmothy",
+      "lastName": "Sipes",
+      "address": "New Kathleen-Loy Stravenue",
+      "email": "Nikolas.Walsh7@gmail.com",
+      "age": 39,
+      "role": "employee",
+      "isconfirmed": false,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/773.jpg"
+    },
+    {
+      "id": 4,
+      "username": "a8ipngd",
+      "password": "PyyBPeZbgq",
+      "firstName": "Bradley",
+      "lastName": "Beier",
+      "address": "Walterstead-Hand Roads",
+      "email": "Hilma_Hand27@gmail.com",
+      "age": 27,
+      "role": "securityman",
+      "isconfirmed": false,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/648.jpg"
+    },
+    {
+      "id": 5,
+      "username": "uy0l60x",
+      "password": "o5lihAfRXX",
+      "firstName": "Charlotte",
+      "lastName": "Grady",
+      "address": "Homestead-Morissette Valley",
+      "email": "Manley.Heathcote44@yahoo.com",
+      "age": 50,
+      "role": "employee",
+      "isconfirmed": true,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/12.jpg"
+    },
+    {
+      "id": 6,
+      "username": "40c5oy7",
+      "password": "HmRzPKB0Gi",
+      "firstName": "Marlon",
+      "lastName": "Stanton",
+      "address": "Spencerboro-Bradtke Forest",
+      "email": "Josephine.Schuppe31@yahoo.com",
+      "age": 30,
+      "role": "employee",
+      "isconfirmed": true,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/420.jpg"
+    },
+    {
+      "id": 7,
+      "username": "4u09g4a",
+      "password": "3LBCjzvQOe",
+      "firstName": "Kristoffer",
+      "lastName": "Harber",
+      "address": "Karolannberg-Wuckert Hollow",
+      "email": "Maybelle_Goodwin@hotmail.com",
+      "age": 34,
+      "role": "securityman",
+      "isconfirmed": true,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/171.jpg"
+    },
+    {
+      "id": 8,
+      "username": "8zi44rl",
+      "password": "Wk0gVHqBjs",
+      "firstName": "Freda",
+      "lastName": "Schroeder",
+      "address": "Lake Ryley-Hermiston Ramp",
+      "email": "Flo_Reinger39@hotmail.com",
+      "age": 50,
+      "role": "securityman",
+      "isconfirmed": false,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/927.jpg"
+    },
+    {
+      "id": 9,
+      "username": "g1gzwvq",
+      "password": "1EeM3lsQiy",
+      "firstName": "Godfrey",
+      "lastName": "Maggio",
+      "address": "Mantefield-Orn Neck",
+      "email": "Cordia_Baumbach83@yahoo.com",
+      "age": 40,
+      "role": "securityman",
+      "isconfirmed": false,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/451.jpg"
+    },
+    {
+      "id": 10,
+      "username": "f30q0jb",
+      "password": "HTM_FX4B48",
+      "firstName": "Lorena",
+      "lastName": "Bruen",
+      "address": "Breitenbergshire-Sonya Lock",
+      "email": "Kira.Denesik@gmail.com",
+      "age": 25,
+      "role": "securityman",
+      "isconfirmed": true,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/267.jpg"
+    },
+    {
+      "id": 11,
+      "username": "4ebee05",
+      "password": "8H84XMtv8n",
+      "firstName": "Eric",
+      "lastName": "Kihn",
+      "address": "Penelopefort-Bobby Hills",
+      "email": "Richard.Mante96@hotmail.com",
+      "age": 41,
+      "role": "securityman",
+      "isconfirmed": false,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/701.jpg"
+    },
+    {
+      "id": 12,
+      "username": "a39ycdg",
+      "password": "Yb4WlonSaM",
+      "firstName": "Jennifer",
+      "lastName": "Schamberger",
+      "address": "Cerritos-Sophie Cliffs",
+      "email": "Treva.Wintheiser@hotmail.com",
+      "age": 36,
+      "role": "employee",
+      "isconfirmed": false,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/746.jpg"
+    },
+    {
+      "id": 13,
+      "username": "5acxr10",
+      "password": "ugUi2yATEF",
+      "firstName": "Macey",
+      "lastName": "Paucek",
+      "address": "Brooklyn Park-Adam Field",
+      "email": "Barbara.Heller@hotmail.com",
+      "age": 40,
+      "role": "employee",
+      "isconfirmed": true,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/320.jpg"
+    },
+    {
+      "id": 14,
+      "username": "dodw1h6",
+      "password": "P5pfr7q49n",
+      "firstName": "Gabriella",
+      "lastName": "Hills",
+      "address": "Grand Forks-Freida Drive",
+      "email": "Leo.Kunze32@gmail.com",
+      "age": 31,
+      "role": "securityman",
+      "isconfirmed": false,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/326.jpg"
+    },
+    {
+      "id": 15,
+      "username": "gviddbc",
+      "password": "TkQ_yj3QpD",
+      "firstName": "Alana",
+      "lastName": "Rolfson",
+      "address": "Abbottfort-Steuber Cove",
+      "email": "Kenya.Prohaska57@hotmail.com",
+      "age": 37,
+      "role": "employee",
+      "isconfirmed": false,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1183.jpg"
+    },
+    {
+      "id": 16,
+      "username": "jxiqki3",
+      "password": "C3dc6jh5A5",
+      "firstName": "Genevieve",
+      "lastName": "Okuneva",
+      "address": "Brakuston-Donnell Curve",
+      "email": "Cecilia71@gmail.com",
+      "age": 35,
+      "role": "securityman",
+      "isconfirmed": false,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/502.jpg"
+    },
+    {
+      "id": 17,
+      "username": "gy5u056",
+      "password": "ptwfXe_NOx",
+      "firstName": "Johathan",
+      "lastName": "Kutch",
+      "address": "Smithamworth-Amelia Manors",
+      "email": "Ivah18@yahoo.com",
+      "age": 37,
+      "role": "employee",
+      "isconfirmed": false,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/787.jpg"
+    },
+    {
+      "id": 18,
+      "username": "04xev2g",
+      "password": "wVus55fLAd",
+      "firstName": "Julien",
+      "lastName": "Ernser",
+      "address": "New Luz-Billie Shores",
+      "email": "Wilfrid_Collins@gmail.com",
+      "age": 49,
+      "role": "employee",
+      "isconfirmed": true,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/779.jpg"
+    },
+    {
+      "id": 19,
+      "username": "uasa47j",
+      "password": "wM4dCxhsOJ",
+      "firstName": "Irwin",
+      "lastName": "Schowalter",
+      "address": "Cummeratashire-Jaclyn Alley",
+      "email": "Lesly85@hotmail.com",
+      "age": 49,
+      "role": "securityman",
+      "isconfirmed": false,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/276.jpg"
+    },
+    {
+      "id": 20,
+      "username": "0dw64sb",
+      "password": "1UkX_zNSJ2",
+      "firstName": "Felicita",
+      "lastName": "Kirlin",
+      "address": "Schaeferstead-Fae Estates",
+      "email": "Elizabeth.Dach@hotmail.com",
+      "age": 38,
+      "role": "securityman",
+      "isconfirmed": true,
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/121.jpg"
+    },
+    {
+      "userName": "PD31717",
+      "password": "PD440@43",
+      "firstName": "Nour",
+      "lastName": "Yasser",
+      "address": "Damietta",
+      "email": "ny@asd.xz",
+      "age": "25",
+      "isConfirmed": true,
+      "role": "employee",
+      "attendance": [
+        {
+          "date": "23/01/2023",
+          "arrival_time": "14:28:10",
+          "departure_time": "15:30:00",
+          "status": "late",
+          "delay_period": 358.16666666666663
+        }
+      ],
+      "id": 21
+    },
+    {
+      "userName": "PD31319",
+      "password": "PD412@43",
+      "firstName": "Yahya",
+      "lastName": "Khaled",
+      "address": "Cairo",
+      "email": "yk@hgf.hg",
+      "age": "28",
+      "role": "employee",
+      "isConfirmed": true,
+      "attendance": [
+        {
+          "date": "23/01/2023",
+          "arrival_time": "13:51:25",
+          "departure_time": "15:30:00",
+          "status": "late",
+          "delay_period": 321.41666666666663
+        },
+        {
+          "date": "24/01/2023",
+          "arrival_time": "4:39:7",
+          "departure_time": "15:30:00",
+          "status": "late",
+          "delay_period": 230.88333333333333
+        }
+      ],
+      "id": 22
+    },
+    {
+      "userName": "PD25212",
+      "password": "PD746@43",
+      "firstName": "Sayed",
+      "lastName": "Ibrahim",
+      "address": "Damietta",
+      "email": "sayib@asc.bv",
+      "age": "26",
+      "role": "securityMan",
+      "isConfirmed": true,
+      "attendance": [
+        {
+          "date": "24/01/2023",
+          "arrival_time": "09:16:11",
+          "departure_time": "15:30:00",
+          "status": "late",
+          "delay_period": 46.18333333333333
+        }
+      ],
+      "id": 23
+    },
+    {
+      "userName": "PD57059",
+      "password": "PD930@43",
+      "firstName": "Saad",
+      "lastName": "Samy",
+      "address": "Damietta",
+      "email": "sayib@asc.bv",
+      "age": "35",
+      "role": "employee",
+      "isConfirmed": false,
+      "attendance": [],
+      "id": 24
+    },
+    {
+      "userName": "PD00131",
+      "password": "PD059@43",
       "firstName": "Samir",
-      "lastName": "Fawzy",
-      "address": "Mansoura",
+      "lastName": "Adel",
+      "address": "Damietta",
       "email": "samir@sa.bv",
-      "age": "27",
-      "attendance": []
+      "age": "25",
+      "role": "employee",
+      "isConfirmed": false,
+      "attendance": [],
+      "id": 25
     },
-    "notifications": [
-      {
-        "username": "PD45859",
-        "id": 1
-      },
-      {
-        "username": "PD01043",
-        "id": 2
-      },
-      {"username": "PD18794",
+    {
+      "userName": "PD45859",
+      "password": "PD071@43",
+      "firstName": "Mohamed",
+      "lastName": "Saad",
+      "address": "Mansoura",
+      "email": "sayib@asc.bv",
+      "age": "23",
+      "role": "securityMan",
+      "isConfirmed": true,
+      "attendance": [],
+      "id": 26
+    },
+    {
+      "userName": "PD01043",
+      "password": "PD887@43",
+      "firstName": "Mariam",
+      "lastName": "Ragab",
+      "address": "Damietta",
+      "email": "mariamragab01@gmail.com",
+      "age": "25",
+      "isConfirmed": true,
+      "role": "employee",
+      "attendance": [
+        {
+          "date": "24/01/2023",
+          "arrival_time": "4:56:48",
+          "departure_time": "15:30:00",
+          "status": "late",
+          "delay_period": 213.2
+        }
+      ],
+      "id": 27
+    },
+    {
+      "userName": "PD18794",
+      "password": "PD274@43",
+      "firstName": "Yasr",
+      "lastName": "Karim",
+      "address": "Mansoura",
+      "email": "yasr@asd.nbv",
+      "age": "35",
+      "isConfirmed": true,
+      "role": "employee",
+      "attendance": [
+        {
+          "date": "24/01/2023",
+          "arrival_time": "4:15:35",
+          "departure_time": "15:30:00",
+          "status": "late",
+          "delay_period": 254.41666666666669
+        }
+      ],
+      "id": 28
+    },
+    {
+      "username": "X6l3wN",
+      "password": "bNkAp@43",
+      "firstname": "mariam",
+      "lastname": "ragab",
+      "address": "damietta",
+      "email": "mariamragab110@gmail.com",
+      "age": "23",
+      "isConfirmed": false,
+      "attendance": [],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 29
+    },
+    {
+      "username": "apBbjo",
+      "password": "BKnki@43",
+      "firstname": "mariam",
+      "lastname": "ragab",
+      "address": "Damietta",
+      "email": "mariamragab110@gmail.com",
+      "age": "23",
+      "role": "employee",
+      "isConfirmed": false,
+      "attendance": [],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 30
+    },
+    {
+      "username": "KmWymj",
+      "password": "4rgQp@43",
+      "firstname": "heba",
+      "lastname": "ragab",
+      "address": "mansoura",
+      "email": "mariamragab01@gmail.com",
+      "age": "35",
+      "role": "employee",
+      "isConfirmed": false,
+      "attendance": [],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 31
+    },
+    {
+      "username": "P6eBN5",
+      "password": "edJto@43",
+      "firstname": "dsf",
+      "lastname": "scsv",
+      "address": "ASDFG",
+      "email": "zcsf@sd.mn",
+      "age": "40",
+      "role": "employee",
+      "isConfirmed": false,
+      "attendance": [],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 32
+    },
+    {
+      "username": "MnM9kC",
+      "password": "tDoW8@43",
+      "firstname": "ADEL",
+      "lastname": "YASSIN",
+      "address": "ASDGC",
+      "email": "ASD.FDDS@ASD.GF",
+      "age": "54",
+      "role": "employee",
+      "isConfirmed": false,
+      "attendance": [],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 33
+    },
+    {
+      "username": "DmITeA",
+      "password": "X3o36@43",
+      "firstname": "fatma",
+      "lastname": "arafa",
+      "address": "Portsaid",
+      "email": "fa.fd@dfg.mn",
+      "age": "30",
+      "role": "employee",
+      "isConfirmed": false,
+      "attendance": [],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 34
+    },
+    {
+      "username": "QH72I7",
+      "password": "UomU2@43",
+      "firstname": "adel",
+      "lastname": "khaled",
+      "address": "ASADF",
+      "email": "aasd.adf@AEFDG.BV",
+      "age": "40",
+      "role": "employee",
+      "isConfirmed": false,
+      "attendance": [],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 35
+    },
+    {
+      "username": "lmpO1x",
+      "password": "gZg5H@43",
+      "firstname": "asd",
+      "lastname": "sdfg",
+      "address": "damietta",
+      "email": "mariamragab110@gmail.com",
+      "age": "45",
+      "role": "employee",
+      "isConfirmed": false,
+      "attendance": [],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 36
+    },
+    {
+      "username": "04ikOP",
+      "password": "qdIUr@43",
+      "firstname": "Haleena",
+      "lastname": "Johny",
+      "address": "Alex",
+      "email": "haleeenajohny@gmail.com",
+      "age": "32",
+      "role": "employee",
+      "isConfirmed": false,
+      "attendance": [],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 37
+    },
+    {
+      "username": "yOBN6q",
+      "password": "tBKAj@43",
+      "firstname": "asd",
+      "lastname": "szd",
+      "address": "asdfg",
+      "email": "asd@asd.xx",
+      "age": "35",
+      "role": "employee",
+      "isConfirmed": false,
+      "attendance": [],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 38
+    },
+    {
+      "username": "tMn7QY",
+      "password": "IYECi@43",
+      "firstname": "asdf",
+      "lastname": "asdc",
+      "address": "Hasdf",
+      "email": "aadf@fdvc.ki",
+      "age": "35",
+      "role": "securityman",
+      "isConfirmed": false,
+      "attendance": [],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 39
+    }
+  ],
+  "admin": {
+    "userName": "PDITIAdmin",
+    "password": "PDITI@43"
+  },
+  "securityMan": {
+    "userName": "PDITISecurity",
+    "password": "PDITISecurity@43",
+    "firstName": "Samir",
+    "lastName": "Fawzy",
+    "address": "Mansoura",
+    "email": "samir@sa.bv",
+    "age": "27",
+    "attendance": []
+  },
+  "notifications": [
+    {
+      "username": "PD45859",
+      "id": 1
+    },
+    {
+      "username": "PD01043",
+      "id": 2
+    },
+    {
+      "username": "PD18794",
       "id": 3
+    },
+    {
+      "username": "04ikOP",
+      "id": 4
+    },
+    {
+      "username": "yOBN6q",
+      "id": 5
+    },
+    {
+      "username": "tMn7QY",
+      "id": 6
     }
   ],
   "attendance-notifications": [],

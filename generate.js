@@ -2,7 +2,7 @@ module.exports = function () {
   const { faker } = require("@faker-js/faker");
   const _ = require("lodash");
   return {
-    employees:_.times(10,function(n){
+    employees:_.times(20,function(n){
         return {
             id:n+1,
             username:faker.random.alphaNumeric(7),
@@ -14,6 +14,7 @@ module.exports = function () {
             age:faker.datatype.number({ min:23,max:50 }),
             role:faker.helpers.arrayElement(['securityman', 'employee']),
             isconfirmed: faker.datatype.boolean(),
+            avatar:faker.internet.avatar()
         }
     })
   }
