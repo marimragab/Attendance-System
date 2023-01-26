@@ -1,0 +1,25 @@
+.login-form {
+  padding: 45px 0;
+  /* height: 90vh; */
+}
+
+.login-form .login-container {
+  margin: 0 auto;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.login-form .login-background {
+  background:rgba(122, 120, 120, 0) url(../images/login-final.jpg) no-repeat center;
+  mix-blend-mode:multiply;
+  background-size: 100%;
+  padding: 9em;
+}
+
+.login-form form {
+    background-color: #ffffff;
+    /* padding: 40px 60px; */
+    color: #505e6c;
+    min-height: 270px;
+} 
+

@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="./../css/bootstrap.css">
+    <link rel="stylesheet" href="./../css/signup.css">
+    <link rel="stylesheet" href="./../css/login.css">
+
 </head>
 <body>
-    <h1>Login</h1>
+    <div class="login-form container col-lg-4 col-6 mt-5">
+        <div class="login-container m-auto">
+          <div class="col-lg-12 d-md-block d-none login-background"></div>
+          <form class="col-lg-8 col-md-10 col-11 m-auto pb-3">
+            <h2 class="text-center text-primary pt-2"><strong>Login</strong></h2>
+            <div class="form-group mb-3">
+              <input
+                class="form-control"
+                type="text"
+                name="firstname"
+                placeholder="User Name"
+              />
+            </div>
+            <div class="form-group mb-3">
+              <input
+                class="form-control"
+                type="password"
+                name="password"
+                placeholder="Password"
+              />
+            </div>
+  
+            <div class="form-group mb-3 text-center">
+              <button class="btn btn-primary login-btn" type="button">
+                Login
+              </button>
+            </div>
+            <div class="container text-center">
+                <span >Don't have an account?</span>
+                <a href="./signup.html" class="already pb-2">Sign Up</a>
+            </div>
+           
+          </form>
+        </div>
+      </div>
 </body>
 </html>

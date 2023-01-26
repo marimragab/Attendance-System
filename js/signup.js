@@ -101,4 +101,3 @@ function selectDomElements() {
   }
 }
 
-//  cb61f9c5-b819-43b5-a18e-81a80c4e9622
