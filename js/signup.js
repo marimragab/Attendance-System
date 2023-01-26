@@ -92,7 +92,7 @@ function selectDomElements() {
           lastnameInput.value,
           addressInput.value,
           emailInput.value,
-          ageInput.value,
+          Number(ageInput.value),
           depatrment.value
         );
         notifyNewEmployeeRegisteration(username);

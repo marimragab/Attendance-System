@@ -45,8 +45,24 @@ function notifyNewEmployeeRegisteration(username) {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({username}),
+    body: JSON.stringify({ username }),
   });
 }
 
-export { addEmployee, isDuplicateEmail ,notifyNewEmployeeRegisteration};
+async function isExistEmployee(username, password) {
+  const data = await fetch(
+    `http://localhost:3000/employees?username=${username}&&password=${password}`
+  );
+  const employee = await data.json();
+  return employee;
+}
+
+async function getEmployeeData(username){
+  const data = await fetch(
+    `http://localhost:3000/employees?username=${username}`
+  );
+  const employee = await data.json();
+  return employee;
+}
+
+export { addEmployee, isDuplicateEmail, notifyNewEmployeeRegisteration,isExistEmployee,getEmployeeData };
