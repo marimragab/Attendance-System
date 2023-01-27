@@ -1,4 +1,6 @@
-import { Employee } from "./employee.js";
+import { Employee } from "../utilities/employee.js";
+
+const url = "http://localhost:3000";
 
 function addEmployee(
   username,
@@ -32,14 +34,23 @@ function addEmployee(
 
 async function isDuplicateEmail(email) {
   let flag = false;
-  const data = await fetch(`http://localhost:3000/employees?email=${email}`);
+  const url = "http://localhost:3000";
+  const data = await fetch(`${url}/employees?email=${email}`);
+  const employee = await data.json();
+  if (employee.length > 0) flag = true;
+  return flag;
+}
+
+async function isEmployee(username) {
+  let flag = false;
+  const data = await fetch(`${url}/employees?username=${username}`);
   const employee = await data.json();
   if (employee.length > 0) flag = true;
   return flag;
 }
 
 function notifyNewEmployeeRegisteration(username) {
-  fetch("http://localhost:3000/notifications", {
+  fetch(`${url}/registeration-notifications`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -51,18 +62,30 @@ function notifyNewEmployeeRegisteration(username) {
 
 async function isExistEmployee(username, password) {
   const data = await fetch(
-    `http://localhost:3000/employees?username=${username}&&password=${password}`
+    `${url}/employees?username=${username}&&password=${password}`
   );
   const employee = await data.json();
   return employee;
 }
 
-async function getEmployeeData(username){
-  const data = await fetch(
-    `http://localhost:3000/employees?username=${username}`
-  );
-  const employee = await data.json();
-  return employee;
+async function getEmployeeData(username) {
+  let employee;
+  try {
+    const data = await fetch(`${url}/employees?username=${username}`);
+    employee = await data.json();
+  } catch (error) {
+    console.log(error);
+  }
+  // console.log(employee)
+  if (employee.length > 0) return employee;
+  else throw new Error("Employee not found");
 }
 
-export { addEmployee, isDuplicateEmail, notifyNewEmployeeRegisteration,isExistEmployee,getEmployeeData };
+export {
+  addEmployee,
+  isDuplicateEmail,
+  notifyNewEmployeeRegisteration,
+  isExistEmployee,
+  getEmployeeData,
+  isEmployee,
+};

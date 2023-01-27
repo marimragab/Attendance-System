@@ -1,4 +1,4 @@
-import { isDuplicateEmail } from "./employeeRequests.js";
+import { isDuplicateEmail } from "./../requests/employee.js";
 
 function isValidUserName(username) {
   return /^[a-zA-Z]{3,8}$/.test(username.trim());
@@ -9,7 +9,8 @@ function isValidEmail(email) {
 }
 
 function isValidAge(age) {
-  return /^(23|[3-6][0-9]|5[0-5])$/.test(Number(age));
+  // return /^(23|[3-6][0-9]|5[0-5])$/.test(Number(age));
+  return Number(age) >= 20 && Number(age) <= 60;
 }
 
 function isValidAddress(address) {
@@ -55,7 +56,7 @@ function validatelastNameOnBlur() {
     $(".lastname-done").removeClass("d-none");
     $(this).css("border-bottom", "2px solid green");
     $(this).css("background", "none");
-    $("select[name=department]").css("background","lightgrey");
+    $("select[name=department]").css("background", "lightgrey");
   }
 }
 
@@ -70,10 +71,9 @@ function validateDepartmentOnChange() {
   if (this.value == "default") {
     $(".department-error").removeClass("d-none");
     $(this).css("border-bottom", "2px solid red");
-
   } else {
     $(".department-error").addClass("d-none");
-    $(this).css("background","none");
+    $(this).css("background", "none");
     $(this).css("border-bottom", "2px solid green");
     $("input[name=email]").focus();
   }

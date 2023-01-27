@@ -1,4 +1,4 @@
-import { getEmployeeData } from "./employeeRequests.js";
+import { getEmployeeData } from "../requests/employee.js";
 
 $(function () {
     let currentuser = localStorage.getItem("currentUserName");
@@ -6,7 +6,7 @@ $(function () {
   
   getEmployeeData(currentuser).then(securitymanData=>{
     console.log(securitymanData)
-    $('#securityMan-image').prop('src',securitymanData[0].avatar);
+    $('.employee-image').prop('src',securitymanData[0].avatar);
     document.querySelector('.securityman-name').innerText=`${securitymanData[0].firstname} ${securitymanData[0].lastname}`
     document.querySelector('.securityman-email').innerText=`${securitymanData[0].email}`
 

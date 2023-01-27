@@ -14,6 +14,7 @@ module.exports = function () {
             age:faker.datatype.number({ min:23,max:50 }),
             role:faker.helpers.arrayElement(['securityman', 'employee']),
             isconfirmed: faker.datatype.boolean(),
+            attendance:faker.datatype.array(0),
             avatar:faker.internet.avatar()
         }
     })

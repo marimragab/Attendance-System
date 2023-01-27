@@ -16,11 +16,11 @@ import {
   isValidAddress,
 } from "./signupEventsHandlers.js";
 
-import { generateRandomCode, id } from "./employee.js";
+import { generateRandomCode, id } from "./../utilities/employee.js";
 import {
   addEmployee,
   notifyNewEmployeeRegisteration,
-} from "./employeeRequests.js";
+} from "./../requests/employee.js";
 
 window.addEventListener("load", selectDomElements);
 
@@ -73,8 +73,8 @@ function selectDomElements() {
       $(".department-error").removeClass("d-none");
       $("select[name=department]").css("border-bottom", "2px solid red");
     } else {
-      let username = generateRandomCode(6);
-      let password = generateRandomCode(5) + "@43";
+      let username = "PD"+generateRandomCode(5);
+      let password ="PD"+ generateRandomCode(4) + "@43";
       Email.send({
         SecureToken: "1081cb00-0c92-4207-9112-46555f427fdd",
         To: emailInput.value,

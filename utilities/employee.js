@@ -1,11 +1,11 @@
-const characters =
-  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+const numbers =
+  "0123456789";
 
 function generateRandomCode(length) {
   let randomCode = "";
   for (let i = 0; i < length; i++) {
-    randomCode += characters.charAt(
-      Math.floor(Math.random() * characters.length)
+    randomCode += numbers.charAt(
+      Math.floor(Math.random() * numbers.length)
     );
   }
   return randomCode;

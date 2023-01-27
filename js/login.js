@@ -1,4 +1,4 @@
-import { isExistEmployee } from "./employeeRequests.js";
+import { isExistEmployee } from "./../requests/employee.js";
 
 $(function () {
   const usernameInput = document.querySelector("input[name=username]");
@@ -11,6 +11,7 @@ $(function () {
       usernameInput.value == "PDITIAdmin" &&
       passwordInput.value == "PDITI@43"
     ) {
+      sessionStorage.setItem('admin',usernameInput.value)
       window.location.href =
         "http://127.0.0.1:5500/attendance_website/admin.html";
     } else {
