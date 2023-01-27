@@ -149,7 +149,7 @@
       "address": "Terrillville-Casper Isle",
       "email": "Maude.Weber@yahoo.com",
       "age": 38,
-      "role": "securityman",
+      "role": "employee",
       "isconfirmed": true,
       "attendance": [],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/701.jpg"
@@ -191,7 +191,7 @@
       "address": "Wittingtown-Nola Overpass",
       "email": "Stevie41@yahoo.com",
       "age": 49,
-      "role": "securityman",
+      "role": "employee",
       "isconfirmed": true,
       "attendance": [],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/205.jpg"
@@ -218,8 +218,8 @@
       "lastname": "Cassin",
       "address": "Fort Janelle-Osvaldo Road",
       "email": "Simeon_Dooley10@yahoo.com",
-      "age": 49,
-      "role": "securityman",
+      "age": 42,
+      "role": "employee",
       "isconfirmed": true,
       "attendance": [],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/360.jpg"
@@ -235,7 +235,13 @@
       "age": 38,
       "role": "employee",
       "isconfirmed": true,
-      "attendance": [],
+      "attendance": [
+        {
+          "day": " Friday",
+          "date": " 2023-01-27",
+          "time": " 14:16:35"
+        }
+      ],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/659.jpg"
     },
     {
@@ -337,7 +343,7 @@
       "address": "Damietta",
       "email": "sayib@asc.bv",
       "age": "26",
-      "role": "securityMan",
+      "role": "securityman",
       "isconfirmed": true,
       "attendance": [
         {
@@ -384,7 +390,7 @@
       "address": "Mansoura",
       "email": "sayib@asc.bv",
       "age": "23",
-      "role": "securityMan",
+      "role": "securityman",
       "isconfirmed": false,
       "attendance": [],
       "id": 26
@@ -524,7 +530,13 @@
       "age": "32",
       "role": "employee",
       "isconfirmed": true,
-      "attendance": [],
+      "attendance": [
+        {
+          "day": " Friday",
+          "date": " 2023-01-27",
+          "time": " 14:23:35"
+        }
+      ],
       "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
       "id": 37
     },
@@ -608,5 +620,20 @@
       "id": 4
     }
   ],
-  "attendance-notifications": []
+  "attendance-notifications": [
+    {
+      "day": "Fri",
+      "date": "2023-01-27",
+      "time": "14:16:35",
+      "username": "5uhe27o",
+      "id": 1
+    },
+    {
+      "day": "Fri",
+      "date": "2023-01-27",
+      "time": "14:23:35",
+      "username": "04ikOP",
+      "id": 2
+    }
+  ]
 }

@@ -12,9 +12,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./../css/bootstrap.css" />
-    <script src="./../js/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="./../libraries/bootstrap.css" />
+    <script src="./../libraries/jquery-3.1.1.js"></script>
+    <script src="./../libraries/bootstrap.bundle.js"></script>p
+
     <link rel="stylesheet" href="./../css/employee.css" />
+    <script src="./../js/employee.js" type="module"></script>
   </head>
   <body>
     <!-- <h1>Employee Page</h1> -->
@@ -75,8 +78,8 @@
               />
             </div>
             <div class="text-center">
-              <h3 class="securityman-name"></h3>
-              <p class="securityman-email"></p>
+              <h3 class="employee-name"></h3>
+              <p class="employee-email"></p>
             </div>
           </div>
           <div class="card col-11 my-3 ms-3 menu-leftside">
@@ -111,7 +114,21 @@
 
         <!--  Right Section -->
 
-        <div class="col-lg-8 bg-info"></div>
+        <div class="col-lg-8 bg-info">
+          <div class="card col-lg-6 col-8 my-3 h-lg-25 ms-4 shadow p-3 mb-5 bg-body rounded">
+            <div class="m-auto pt-2">
+              <button class="btn btn-outline-success btn-lg" id="arrival-btn">
+                Record Arrival
+              </button>
+            </div>
+            <div class="m-auto pt-2">
+              <button class="btn btn-outline-secondary btn-lg" id="departure-btn"> 
+                Record Departure
+              </button>
+            </div>
+           
+          </div>
+        </div>
       </div>
     </div>
   </body>

@@ -1,0 +1,36 @@
+The Logic i have applied:
+- When a new user signs up on the system, the property is confirmed to be false, and we send a notification to the admin that a new user has registered on the system with the username of that new user.(created randomly)
+
+- If the admin confirms that user, we update the property confirmed to true.
+- If the admin cancels that user, we remove that user's data from our system.
+
+
+*** The issue here is that we created that username randomly when the user registered on the system, and we send the same username to the admin to confirm, so on what basis does the admin confirm or cancel the user?
+
+*** I think that when a user registers on the system, we should send a notification to the admin with his email address, rather than a randomly generated username, so that the admin can confirm if that email address is on our employees' saved emails.
+(I will change it later if I finish early.)
+
+  --saving our employees' email on database then admin confirm if that is one of our employees
+
+  Note: Save the employees data that admin confirm in array as you can need disply them on the admin page  
+
+
+  ** Employees Attendance Part:
+  I have decided to put two buttons on the employee page:
+  First one for Recording Arrival, when the employee click that button three things occur:
+    1- The buuton disabled
+    2- Arrived property with value true saved in the local storage
+    3- Notify the securityman that the employee has attend 
+      --The security man first checks the employee attendance array if (empty) add new object {day,arrival_time,departure_time,delay_time
+      ,status} 
+
+    -- get the employee date -> check attendance array -> if empty push new object with arrival data -> if not get the last element on the array and check if the day of it is the same as the date of current notification then add time on it as departure time
+
+    *****Remove the notification from notification after update attendance array
+
+
+On logout of employee or admin clear the local storage (not arrived)
+
+How to control refreshing page after send request using fetch?????
+     
+

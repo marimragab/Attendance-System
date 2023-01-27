@@ -81,6 +81,22 @@ async function getEmployeeData(username) {
   else throw new Error("Employee not found");
 }
 
+function notifyEmployeeArrival(arrivalData){
+  fetch(`${url}/attendance-notifications`,{
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(arrivalData),
+  }).then(res=>res.json())
+  .then(data=>console.log(data))
+  .catch(error=>console.log(error))
+}
+
+
+
+
 export {
   addEmployee,
   isDuplicateEmail,
@@ -88,4 +104,5 @@ export {
   isExistEmployee,
   getEmployeeData,
   isEmployee,
+  notifyEmployeeArrival
 };

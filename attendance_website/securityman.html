@@ -13,10 +13,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./../css/bootstrap.css" />
+    <link rel="stylesheet" href="./../libraries/bootstrap.css" />
+    <script src="./../libraries/bootstrap.bundle.js"></script>
+    <script src="./../libraries/jquery-3.1.1.js"></script>
+
     <link rel="stylesheet" href="./../css/employee.css" />
-    <script src="./../js/jquery-3.1.1.js"></script>
-    <script src="./../js/bootstrap.bundle.js"></script>
     <script src="./../js/securityman.js" type="module"></script>
   </head>
   <body>
@@ -40,11 +41,8 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div
-          class="collapse navbar-collapse"
-          id="navbarSupportedContent"
-        >
-          <ul class="navbar-nav me-auto  mb-lg-0">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-lg-0">
             <li class="nav-item">
               <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
             </li>
@@ -59,7 +57,7 @@
               alt="securityMan-image"
               class="me-2 employee-image"
             />
-            <img src="./../images/logout.png"  height="40" class="logout-icon" />
+            <img src="./../images/logout.png" height="40" class="logout-icon" />
           </div>
         </div>
       </div>
@@ -86,33 +84,102 @@
           <div class="card col-11 my-3 ms-3 menu-leftside">
             <div class="card-body">
               <h5 class="card-title">Menu</h5>
-              <p class="card-text">
-               
-              </p>
+              <p class="card-text"></p>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
                 <i class="fa-regular fa-user fs-3 pe-2 text-primary"></i>
-                Profile</li>
-              <li class="list-group-item">
-                <i class="fa-regular fa-bell fs-3 pe-2 text-primary"></i>
-                Notifications  <span class="badge bg-secondary ms-1">0</span>
+                Profile
               </li>
-               
+
+              <!-- <li class="list-group-item" id="notifications-icon">
+                <i class="fa-regular fa-bell fs-3 pe-2 text-primary"></i>
+                Notifications
+                <span class="badge bg-secondary ms-1" id="notifications-number"
+                  >0</span
+                >
+              </li> -->
+
+              <button
+                class="btn btn-outline-light"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+              >
+                <li class="list-group-item" id="notifications-icon">
+                  <i class="fa-regular fa-bell fs-3 pe-2 text-primary"></i>
+                  Notifications
+                  <span
+                    class="badge bg-secondary ms-1"
+                    id="notifications-number"
+                    >0</span
+                  >
+                </li>
+              </button>
+
+              <div
+                class="offcanvas offcanvas-end"
+                tabindex="-1"
+                id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel"
+                id="notifications-panel"
+              >
+                <div class="offcanvas-header">
+                  <h5 id="offcanvasRightLabel">Attendance Notifications</h5>
+                  <button
+                    type="button"
+                    class="btn-close text-reset"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="offcanvas-body" id="attendance-notifications">
+                </div>
+              </div>
+
               <li class="list-group-item">
-                <i class="fa-sharp fa-solid fa-clipboard-user fs-3 pe-2 text-primary"></i>
-                Confirm Attendance</li>
-              <li class="list-group-item">Confirm Attendance</li>
+                <i
+                  class="fa-sharp fa-solid fa-clipboard-user fs-3 pe-2 text-primary"
+                ></i>
+                Confirm Attendance
+              </li>
+              <!-- <li class="list-group-item">Confirm Attendance</li> -->
             </ul>
-            <div class="card-body">
-              
-            </div>
+            <div class="card-body"></div>
           </div>
         </div>
 
         <!--  Right Section -->
 
-        <div class="col-lg-8 bg-info"></div>
+        <div class="col-lg-8 col-6 bg-info right-side">
+          <div class="card card-body col-lg-6 my-4 ms-2">
+            <form action="">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="username"
+                  name="username"
+                />
+              </div>
+              <div class="mb-3">
+                <span class="d-none text-danger attendance-error mb-2"
+                  >Please Choose From Notifications username to Confirm
+                  attendance</span
+                >
+              </div>
+              <div class="mb-3">
+                <input
+                  type="button"
+                  class="form-control btn btn-success"
+                  value="Confirm Attendance"
+                  id="confirm-attendance"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </body>
