@@ -94,6 +94,19 @@ function notifyEmployeeArrival(arrivalData){
   .catch(error=>console.log(error))
 }
 
+function notifyEmployeeDeparture(departureData){
+  fetch(`${url}/departure-notifications`,{
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(departureData),
+  }).then(res=>res.json())
+  .then(data=>console.log(data))
+  .catch(error=>console.log(error))
+}
+
 
 
 
@@ -104,5 +117,5 @@ export {
   isExistEmployee,
   getEmployeeData,
   isEmployee,
-  notifyEmployeeArrival
+  notifyEmployeeArrival,notifyEmployeeDeparture
 };

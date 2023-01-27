@@ -11,7 +11,7 @@ $(function () {
       usernameInput.value == "PDITIAdmin" &&
       passwordInput.value == "PDITI@43"
     ) {
-      sessionStorage.setItem('admin',usernameInput.value)
+      sessionStorage.setItem("admin", usernameInput.value);
       window.location.href =
         "http://127.0.0.1:5500/attendance_website/admin.html";
     } else {
@@ -22,15 +22,16 @@ $(function () {
       if (employee.length > 0 && employee[0].isconfirmed) {
         console.log(employee[0]);
         if (employee[0].role == "employee") {
-        $(".wrongdata-error").addClass("d-none");
+          $(".wrongdata-error").addClass("d-none");
           window.location.href =
             "http://127.0.0.1:5500/attendance_website/employee.html";
+          localStorage.setItem("currentUserName", employee[0].username);
         } else {
-        $(".wrongdata-error").addClass("d-none");
+          $(".wrongdata-error").addClass("d-none");
           window.location.href =
             "http://127.0.0.1:5500/attendance_website/securityman.html";
+          localStorage.setItem("currentSecurityMan", employee[0].username);
         }
-        localStorage.setItem('currentUserName',employee[0].username)
       } else {
         $(".wrongdata-error").removeClass("d-none");
       }

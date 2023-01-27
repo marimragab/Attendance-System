@@ -28,6 +28,10 @@ The Logic i have applied:
 
     *****Remove the notification from notification after update attendance array
 
+    **** Check if the notification of attendance is fron attendance or departure array to be able to delete it after updating
+    **** When user click the arrival button we check the time if is not between works hour we cannot send request with the data
+    ******** Check The logic af arrival and departure again
+
 
 On logout of employee or admin clear the local storage (not arrived)
 

@@ -1,5 +1,9 @@
-import { getEmployeeData, notifyEmployeeArrival } from "./../requests/employee.js";
-import {getCurrentDayAndTime} from "./../utilities/employee.js"
+import {
+  getEmployeeData,
+  notifyEmployeeArrival,
+  notifyEmployeeDeparture
+} from "./../requests/employee.js";
+import { getCurrentDayAndTime } from "./../utilities/employee.js";
 
 window.addEventListener("load", function () {
   let currentUser = localStorage.getItem("currentUserName");
@@ -7,8 +11,15 @@ window.addEventListener("load", function () {
   displayCurrentEmployeeData(currentUser);
 
   $("#arrival-btn").click(recordArrival);
+  $("#departure-btn").click(recordDeparture);
+  
   if (localStorage.getItem("arrived")) {
     $("#arrival-btn").addClass("disabled");
+    $("#departure-btn").removeClass("disabled");
+  }
+
+  if (localStorage.getItem("departed")) {
+    $("#departure-btn").addClass("disabled");
   }
 });
 
@@ -24,8 +35,19 @@ function recordArrival() {
   console.log("Arrived");
   $("#arrival-btn").addClass("disabled");
   localStorage.setItem("arrived", true);
-  let arrivalData=getCurrentDayAndTime();
-  arrivalData.username=localStorage.getItem("currentUserName")
-  notifyEmployeeArrival(arrivalData)
-  console.log(arrivalData)
+  localStorage.removeItem('departed')
+  let arrivalData = getCurrentDayAndTime();
+  arrivalData.username = localStorage.getItem("currentUserName");
+  notifyEmployeeArrival(arrivalData);
+  console.log(arrivalData);
+}
+
+function recordDeparture() {
+  $("#arrival-btn").removeClass("disabled");
+  $("#departure-btn").addClass("disabled");
+  localStorage.removeItem('arrived')
+  localStorage.setItem('departed',true)
+  let departureData = getCurrentDayAndTime();
+  departureData.username = localStorage.getItem("currentUserName");
+  notifyEmployeeDeparture(departureData);
 }

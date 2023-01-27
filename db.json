@@ -109,7 +109,23 @@
       "age": 44,
       "role": "employee",
       "isconfirmed": true,
-      "attendance": [],
+      "attendance": [
+        {
+          "day": " Satday",
+          "date": " 2023-01-28",
+          "arrival_time": " 01:05:47",
+          "delay": 0,
+          "departure_time": " 09:41:14",
+          "status": "on-time"
+        },
+        {
+          "day": " Friday",
+          "date": " 2023-01-27",
+          "arrival_time": " 11:41:14",
+          "delay": 191.23333333333332,
+          "departure_time": "15:30:00"
+        }
+      ],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1005.jpg"
     },
     {
@@ -269,7 +285,16 @@
       "age": 26,
       "role": "employee",
       "isconfirmed": true,
-      "attendance": [],
+      "attendance": [
+        {
+          "day": " Friday",
+          "date": " 2023-01-27",
+          "arrival_time": " 10:16:24",
+          "delay": 106.4,
+          "departure_time": " 19:41:14",
+          "status": "late"
+        }
+      ],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/31.jpg"
     },
     {
@@ -620,20 +645,14 @@
       "id": 4
     }
   ],
-  "attendance-notifications": [
+  "attendance-notifications": [],
+  "departure-notifications": [
     {
-      "day": "Fri",
+      "day": "Friday",
       "date": "2023-01-27",
-      "time": "14:16:35",
-      "username": "5uhe27o",
+      "time": "19:41:14",
+      "username": "7jteei6",
       "id": 1
-    },
-    {
-      "day": "Fri",
-      "date": "2023-01-27",
-      "time": "14:23:35",
-      "username": "04ikOP",
-      "id": 2
     }
   ]
 }
