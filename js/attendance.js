@@ -3,6 +3,7 @@ import {
   getAttendanceNotifications,
   updateEmployeeAttendance,
   updateDepartureTime,
+  deleteDepartureNotification
 } from "./../requests/securityman.js";
 
 import { getEmployeeData } from "./../requests/employee.js";
@@ -86,7 +87,7 @@ function confirmAttendance() {
             attendnceObj
           );
         }
-        deleteNotification(notificationId);
+        deleteDepartureNotification(notificationId);
       }
     });
   }

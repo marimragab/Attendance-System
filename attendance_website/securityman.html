@@ -87,25 +87,20 @@
               <p class="card-text"></p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <i class="fa-regular fa-user fs-3 pe-2 text-primary"></i>
-                Profile
-              </li>
-
-              <!-- <li class="list-group-item" id="notifications-icon">
-                <i class="fa-regular fa-bell fs-3 pe-2 text-primary"></i>
-                Notifications
-                <span class="badge bg-secondary ms-1" id="notifications-number"
-                  >0</span
-                >
-              </li> -->
+              <button class="btn btn-light">
+                <li class="list-group-item">
+                  <i class="fa-regular fa-user fs-3 pe-2 text-primary"></i>
+                  Profile
+                </li>
+              </button>
 
               <button
-                class="btn btn-outline-light"
+                class="btn btn-light"
                 type="button"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasRight"
                 aria-controls="offcanvasRight"
+                style="background-color: transparent"
               >
                 <li class="list-group-item" id="notifications-icon">
                   <i class="fa-regular fa-bell fs-3 pe-2 text-primary"></i>
@@ -134,16 +129,18 @@
                     aria-label="Close"
                   ></button>
                 </div>
-                <div class="offcanvas-body" id="attendance-notifications">
-                </div>
+                <div class="offcanvas-body" id="attendance-notifications"></div>
               </div>
 
-              <li class="list-group-item">
-                <i
-                  class="fa-sharp fa-solid fa-clipboard-user fs-3 pe-2 text-primary"
-                ></i>
-                Confirm Attendance
-              </li>
+              <button class="btn btn-light">
+                <li class="list-group-item">
+                  <i
+                    class="fa-sharp fa-solid fa-clipboard-user fs-3 pe-2 text-primary"
+                  ></i>
+                  Confirm Attendance
+                </li>
+              </button>
+
               <!-- <li class="list-group-item">Confirm Attendance</li> -->
             </ul>
             <div class="card-body"></div>

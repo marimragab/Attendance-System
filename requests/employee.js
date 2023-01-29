@@ -107,7 +107,15 @@ function notifyEmployeeDeparture(departureData){
   .catch(error=>console.log(error))
 }
 
-
+async function getDailyReport(username,date){
+let employeeData=await getEmployeeData(username);
+console.log(employeeData[0].attendance)
+let attendanceArray=employeeData[0].attendance;
+let specificAttendanceDay=attendanceArray.find(element=>element.date.trim()==date)
+if(!specificAttendanceDay) return false
+console.log(specificAttendanceDay)
+return specificAttendanceDay
+}
 
 
 export {
@@ -117,5 +125,6 @@ export {
   isExistEmployee,
   getEmployeeData,
   isEmployee,
-  notifyEmployeeArrival,notifyEmployeeDeparture
+  notifyEmployeeArrival,notifyEmployeeDeparture,
+  getDailyReport
 };

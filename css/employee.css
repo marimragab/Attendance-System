@@ -13,3 +13,9 @@
 .navbar-brand span{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+input[type="date"]{
+    background-color: rgb(182, 217, 232);
+    border: none;
+    outline: none;
+}

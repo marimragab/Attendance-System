@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Employee</title>
+    <!-- Font awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -12,12 +13,34 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./../libraries/bootstrap.css" />
-    <script src="./../libraries/jquery-3.1.1.js"></script>
-    <script src="./../libraries/bootstrap.bundle.js"></script>
+    <!-- Font awesome -->
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./../libraries/bootstrap.css" />
+    <script src="./../libraries/bootstrap.bundle.js"></script>
+    <!-- Bootstrap -->
+
+    <!-- JQuery and link for JQuery datepicker -->
+    <script src="./../libraries/jquery-3.1.1.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+    <!-- JQuery and link for JQuery datepicker -->
+
+    <!-- My Style & Script -->
     <link rel="stylesheet" href="./../css/employee.css" />
     <script src="./../js/employee.js" type="module"></script>
+    <!-- My Style & Script -->
   </head>
   <body>
     <!-- <h1>Employee Page</h1> -->
@@ -67,7 +90,9 @@
     <div class="container-lg container-fluid my-5">
       <div class="row offset-1">
         <!-- Left Section -->
-        <div class="col-lg-4 col-6 bg-danger left-side">
+        <div
+          class="col-lg-4 col-md-6 bg-warning bg-opacity-25 bg-gradient left-side rounded rounded-4"
+        >
           <div class="card col-11 my-3 h-25 ms-3">
             <div class="m-auto pt-2">
               <img
@@ -84,37 +109,63 @@
           </div>
           <div class="card col-11 my-3 ms-3 menu-leftside">
             <div class="card-body">
-              <h5 class="card-title">Menu</h5>
+              <h5 class="card-title text-center">EMPLOYEE</h5>
               <p class="card-text"></p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <i class="fa-regular fa-user fs-3 pe-2 text-primary"></i>
-                Profile
-              </li>
-              <li class="list-group-item">
-                <i class="fa-regular fa-bell fs-3 pe-2 text-primary"></i>
-                Notifications <span class="badge bg-secondary ms-1">0</span>
-              </li>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <i class="fa-regular fa-user fs-3 pe-2 text-primary"></i>
+                  Profile
+                </li>
 
-              <li class="list-group-item">
-                <i
-                  class="fa-sharp fa-solid fa-clipboard-user fs-3 pe-2 text-primary"
-                ></i>
-                Attendance
-              </li>
-              <li class="list-group-item">
-                <i class="fa-regular fa-file-lines fs-3 pe-2 text-primary"></i>
-                Reports
-              </li>
-            </ul>
-            <div class="card-body"></div>
+                <li class="list-group-item">
+                  <i
+                    class="fa-sharp fa-solid fa-clipboard-user fs-3 pe-2 text-primary"
+                  ></i>
+                  Attendance
+                </li>
+                <!-- <li class="list-group-item">
+                  <i class="fa-regular fa-file-lines fs-3 pe-2 text-primary"></i>
+                  Reports
+                </li>
+              <div class=" ms-3">
+                <p>Daily Report</p>
+              </div> -->
+                <div class="dropdown">
+                  <button
+                    class="btn btn-light dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    style="background-color: transparent"
+                  >
+                    <i
+                      class="fa-regular fa-file-lines fs-3 pe-2 text-primary"
+                    ></i>
+                    Reports
+                  </button>
+                  <ul
+                    class="dropdown-menu"
+                    style="min-width: 21rem !important"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li>
+                      <a class="dropdown-item" id="daily-report">Daily</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" id="monthly-report">Monthly</a>
+                    </li>
+                  </ul>
+                </div>
+              </ul>
+            </div>
           </div>
         </div>
 
         <!--  Right Section -->
 
-        <div class="col-lg-8 bg-info">
+        <div class="col-lg-8 col-md-6">
+          <!-- Arrival & Departure -->
           <div
             class="card col-lg-6 col-8 my-3 h-lg-25 ms-4 shadow p-3 mb-5 bg-body rounded"
           >
@@ -132,6 +183,41 @@
               </button>
             </div>
           </div>
+          <!-- Arrival & Departure -->
+
+
+          <!-- calender daily -->
+          <div class="card col-lg-4 col-8 ms-4 d-none daily-calender">
+            <input
+              type="date"
+              name="daily-report"
+              placeholder="yyyy-mm-dd"
+              value=""
+              min="2023-01-25"
+              max="2030-12-31"
+              class="card-body form-control today-date"
+            />
+            <span class="d-none text-danger date-error"
+              >Please choose specific date to display its report</span
+            >
+          </div>
+          <span class="d-none text-danger unvalid-date"
+            >Please choose valid date
+          </span>
+          <!-- calender daily-->
+
+          <!-- Calender Range -->
+          <div class="card col-lg-4 col-8 ms-4 monthly-calender d-none ">
+            <input type="text" name="daterange" value="choose Range of Dates" />
+          </div>
+          <!-- Calender Range -->
+
+          <!-- Dispaly Report Data -->
+          <div
+            class="card col-lg-6 col-8 my-3 h-lg-25 ms-4 shadow-sm p-3 mb-5 bg-body rounded d-none"
+            id="report-data"
+          ></div>
+          <!-- Dispaly Report Data -->
         </div>
       </div>
     </div>

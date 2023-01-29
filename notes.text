@@ -38,3 +38,13 @@ On logout of employee or admin clear the local storage (not arrived)
 How to control refreshing page after send request using fetch?????
      
 
+--------------------------------------------------------------------------
+***** Handle holidays and adsent days on attendance 
+***** Control arrival and departure buttons
+   --  disable them on holidays (save holidays days dynamically for all employees)
+
+** Excuse Report: if the employee leave before 3:30 then status will be "excuse"
+** Add status "absent"
+
+** If the employee chooses day we dispaly its report but if he then chooses another day,
+ if we display the two reports or the last one only?

@@ -111,19 +111,19 @@
       "isconfirmed": true,
       "attendance": [
         {
-          "day": " Satday",
-          "date": " 2023-01-28",
-          "arrival_time": " 01:05:47",
-          "delay": 0,
-          "departure_time": " 09:41:14",
-          "status": "on-time"
-        },
-        {
           "day": " Friday",
           "date": " 2023-01-27",
           "arrival_time": " 11:41:14",
           "delay": 191.23333333333332,
           "departure_time": "15:30:00"
+        },
+        {
+          "day": " Satday",
+          "date": " 2023-01-28",
+          "arrival_time": " 01:05:47",
+          "delay": 0,
+          "departure_time": " 01:41:55",
+          "status": "on-time"
         }
       ],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1005.jpg"
@@ -423,10 +423,10 @@
     {
       "username": "PD01043",
       "password": "PD887@43",
-      "firstname": "Mariam",
-      "lastname": "Ragab",
+      "firstname": "mayada",
+      "lastname": "omar",
       "address": "Damietta",
-      "email": "mariamragab01@gmail.com",
+      "email": "asdf.ds01@gmail.com",
       "age": "25",
       "isconfirmed": true,
       "role": "employee",
@@ -465,10 +465,10 @@
     {
       "username": "X6l3wN",
       "password": "bNkAp@43",
-      "firstname": "mariam",
-      "lastname": "ragab",
+      "firstname": "mayada",
+      "lastname": "omar",
       "address": "damietta",
-      "email": "mariamragab110@gmail.com",
+      "email": "asdf.ds110@gmail.com",
       "age": "23",
       "isconfirmed": false,
       "attendance": [],
@@ -478,10 +478,10 @@
     {
       "username": "apBbjo",
       "password": "BKnki@43",
-      "firstname": "mariam",
-      "lastname": "ragab",
+      "firstname": "mayada",
+      "lastname": "omar",
       "address": "Damietta",
-      "email": "mariamragab110@gmail.com",
+      "email": "asdf.ds110@gmail.com",
       "age": "23",
       "role": "employee",
       "isconfirmed": false,
@@ -493,9 +493,9 @@
       "username": "KmWymj",
       "password": "4rgQp@43",
       "firstname": "heba",
-      "lastname": "ragab",
+      "lastname": "omar",
       "address": "mansoura",
-      "email": "mariamragab01@gmail.com",
+      "email": "asdf.ds01@gmail.com",
       "age": "35",
       "role": "employee",
       "isconfirmed": false,
@@ -597,7 +597,7 @@
       "username": "PD81414",
       "password": "PD4372@43",
       "firstname": "Heba",
-      "lastname": "Ragab",
+      "lastname": "omar",
       "address": "Damietta",
       "email": "hebaelshafei2001@gmail.com",
       "age": 20,
@@ -645,14 +645,14 @@
       "id": 4
     }
   ],
-  "attendance-notifications": [],
-  "departure-notifications": [
+  "attendance-notifications": [
     {
-      "day": "Friday",
-      "date": "2023-01-27",
-      "time": "19:41:14",
-      "username": "7jteei6",
+      "day": "Satday",
+      "date": "2023-01-28",
+      "time": "04:07:24",
+      "username": "seym5vt",
       "id": 1
     }
-  ]
+  ],
+  "departure-notifications": []
 }

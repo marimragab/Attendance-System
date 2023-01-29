@@ -58,26 +58,40 @@ function getCurrentDayAndTime() {
   let date =
     today.getFullYear() + "-" + today.getMonth() + 1 + "-" + today.getDate();
   let time = today.toString().split(" ")[4];
-  let day = today.toString().split(" ")[0]+"day";
+  let day = today.toString().split(" ")[0] + "day";
   return { day, date, time };
 }
 
 function getDifferenceInHours(time1, time2) {
-  let date1=generateDate(time1);
-  let date2=generateDate(time2);
+  let date1 = generateDate(time1);
+  let date2 = generateDate(time2);
   const diffInMs = Math.abs(date2 - date1);
   return diffInMs / (1000 * 60 * 60);
 }
 
-function generateDate(time){
-  let splittedTime=time.split(":");
-  let hours=splittedTime[0];
-  let minutes=splittedTime[1];
-  let seconds=splittedTime[2];
-  const date=new Date();
-  date.setHours(hours,minutes,seconds);
+function generateDate(time) {
+  let splittedTime = time.split(":");
+  let hours = splittedTime[0];
+  let minutes = splittedTime[1];
+  let seconds = splittedTime[2];
+  const date = new Date();
+  date.setHours(hours, minutes, seconds);
   return date;
 }
 
+function getTodayDate() {
+  const today = new Date();
+  const todayDate =
+    today.getFullYear() + "-" + today.getMonth() + 1 + "-" + today.getDate();
+  return todayDate.trim();
+}
 
-export { generateRandomCode, Employee, id, getCurrentDayAndTime, getDifferenceInHours ,generateDate};
+export {
+  generateRandomCode,
+  Employee,
+  id,
+  getCurrentDayAndTime,
+  getDifferenceInHours,
+  generateDate,
+  getTodayDate,
+};
