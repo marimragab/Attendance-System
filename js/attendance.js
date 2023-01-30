@@ -3,7 +3,7 @@ import {
   getAttendanceNotifications,
   updateEmployeeAttendance,
   updateDepartureTime,
-  deleteDepartureNotification
+  deleteDepartureNotification,
 } from "./../requests/securityman.js";
 
 import { getEmployeeData } from "./../requests/employee.js";
@@ -39,31 +39,10 @@ function confirmAttendance() {
       delete attendnceObj.notificationId;
       attendnceObj.arrival_time = attendnceObj.time;
       delete attendnceObj.time;
-      attendnceObj.delay =
-        getDifferenceInHours(attendnceObj.arrival_time, formalAttendanceTime) *
-        60;
       attendnceObj.departure_time = formalDepartureTime;
       console.log(attendnceObj);
 
-      if (employeeData[0].attendance.length == 0) {
-        if (
-          generateDate(attendnceObj.arrival_time) >= generateDate("10:00:00")
-        ) {
-          attendnceObj.status = "late";
-        } else if (
-          generateDate(attendnceObj.arrival_time) <=
-          generateDate(formalAttendanceTime)
-        ) {
-          attendnceObj.status = "on-time";
-          attendnceObj.delay = 0;
-        }
-        updateEmployeeAttendance(
-          employeeData[0].id,
-          employeeData[0].attendance,
-          attendnceObj
-        );
-        deleteNotification(notificationId);
-      } else {
+      if (employeeData[0].attendance.length != 0) {
         let attendanceArray = employeeData[0].attendance;
         console.log(employeeData[0].attendance);
 
@@ -80,14 +59,51 @@ function confirmAttendance() {
             removeLastDayFromAttendanceArray,
             lastDay
           );
-        } else {
-          updateEmployeeAttendance(
-            employeeData[0].id,
-            employeeData[0].attendance,
-            attendnceObj
-          );
+          // deleteDepartureNotification(notificationId);
+        } else if (
+          generateDate(attendnceObj.arrival_time.trim()) >=
+          generateDate(formalAttendanceTime)
+        ) {
+          attendnceObj.status = "late";
+          attendnceObj.delay =
+            getDifferenceInHours(
+              attendnceObj.arrival_time,
+              formalAttendanceTime
+            ) * 60;
+        } else if (
+          generateDate(attendnceObj.arrival_time.trim()) <=
+          generateDate(formalAttendanceTime)
+        ) {
+          attendnceObj.status = "on-time";
+          attendnceObj.delay = 0;
         }
-        deleteDepartureNotification(notificationId);
+        updateEmployeeAttendance(
+          employeeData[0].id,
+          employeeData[0].attendance,
+          attendnceObj
+        );
+        deleteNotification(notificationId);
+      } else {
+        if (
+          generateDate(attendnceObj.arrival_time.trim()) >=
+          generateDate(formalAttendanceTime)
+        ) {
+          attendnceObj.status = "late";
+          attendnceObj.delay =
+            getDifferenceInHours(
+              attendnceObj.arrival_time,
+              formalAttendanceTime
+            ) * 60;
+        }else {
+          attendnceObj.status = "on-time";
+          attendnceObj.delay = 0;
+        }
+        updateEmployeeAttendance(
+          employeeData[0].id,
+          employeeData[0].attendance,
+          attendnceObj
+        );
+        // deleteDepartureNotification(notificationId);
       }
     });
   }

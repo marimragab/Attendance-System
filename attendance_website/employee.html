@@ -20,8 +20,14 @@
     <script src="./../libraries/bootstrap.bundle.js"></script>
     <!-- Bootstrap -->
 
-    <!-- JQuery and link for JQuery datepicker -->
+    <!-- for bootstrap datatable -->
     <script src="./../libraries/jquery-3.1.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+    <!-- for bootstrap datatable -->
+
+    <!-- JQuery and link for JQuery datepicker -->
+    <!-- <script src="./../libraries/jquery-3.1.1.js"></script> -->
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
@@ -42,6 +48,7 @@
     <script src="./../js/employee.js" type="module"></script>
     <!-- My Style & Script -->
   </head>
+
   <body>
     <!-- <h1>Employee Page</h1> -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -146,7 +153,6 @@
                   </button>
                   <ul
                     class="dropdown-menu"
-                    style="min-width: 21rem !important"
                     aria-labelledby="dropdownMenuButton1"
                   >
                     <li>
@@ -185,7 +191,6 @@
           </div>
           <!-- Arrival & Departure -->
 
-
           <!-- calender daily -->
           <div class="card col-lg-4 col-8 ms-4 d-none daily-calender">
             <input
@@ -207,17 +212,38 @@
           <!-- calender daily-->
 
           <!-- Calender Range -->
-          <div class="card col-lg-4 col-8 ms-4 monthly-calender d-none ">
+          <div class="card col-lg-4 col-8 ms-4 monthly-calender d-none">
             <input type="text" name="daterange" value="choose Range of Dates" />
           </div>
           <!-- Calender Range -->
 
-          <!-- Dispaly Report Data -->
+          <!-- Dispaly Daily Report Data -->
           <div
             class="card col-lg-6 col-8 my-3 h-lg-25 ms-4 shadow-sm p-3 mb-5 bg-body rounded d-none"
             id="report-data"
           ></div>
-          <!-- Dispaly Report Data -->
+          <!-- Dispaly Daily Report Data -->
+
+          <!-- Display Monthly Report -->
+          <div
+            class="card col-lg-11 my-3 h-lg-25 ms-4 shadow-sm p-3 mb-5 bg-body rounded d-none"
+            id="monthly-report-container"
+          >
+            <table
+              id="monthly-report-data"
+              class="table table-striped"
+              style="width: 100%"
+            ></table>
+          </div>
+
+          <span class="d-none text-danger unvalid-start-date ms-4"
+            >No Available Data On the start Date,choose another start date</span
+          ><br>
+          <span class="d-none text-danger unvalid-end-date ms-4"
+            >No Available Data On the end Date,choose another end date</span
+          >
+
+          <!-- Display Monthly Report -->
         </div>
       </div>
     </div>

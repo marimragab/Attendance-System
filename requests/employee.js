@@ -117,6 +117,11 @@ console.log(specificAttendanceDay)
 return specificAttendanceDay
 }
 
+async function getSpecificEmployeeAttendance(username){
+  let employeeData=await getEmployeeData(username);
+  return employeeData[0].attendance
+
+}
 
 export {
   addEmployee,
@@ -126,5 +131,6 @@ export {
   getEmployeeData,
   isEmployee,
   notifyEmployeeArrival,notifyEmployeeDeparture,
-  getDailyReport
+  getDailyReport,
+  getSpecificEmployeeAttendance
 };

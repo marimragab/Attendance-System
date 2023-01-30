@@ -3,6 +3,7 @@ import {
   notifyEmployeeArrival,
   notifyEmployeeDeparture,
   getDailyReport,
+  getSpecificEmployeeAttendance,
 } from "./../requests/employee.js";
 import { getCurrentDayAndTime, getTodayDate } from "./../utilities/employee.js";
 
@@ -29,7 +30,6 @@ window.addEventListener("load", function () {
 
   $("#daily-report").on("click", displayCalender);
   $("#monthly-report").on("click", displayRangeCalender);
-
 });
 
 async function displayCurrentEmployeeData(username) {
@@ -62,6 +62,8 @@ function recordDeparture() {
 }
 
 function displayCalender() {
+  $(".monthly-calender").addClass("d-none");
+  $("#monthly-report-container").addClass("d-none");
   $(".daily-calender").removeClass("d-none");
   console.log($("input[name=daily-report]").val());
   $("input[name=daily-report]").on("change", chooseDateToDisplayItsReport);
@@ -96,25 +98,78 @@ async function displayReportData(choosedDate) {
   );
   console.log(choosedDateReport, employeeData[0]);
   $("#report-data").removeClass("d-none");
+  $(".monthly-calender").addClass("d-none");
+  $("#monthly-report-container").addClass("d-none");
+  $(".unvalid-start-date").addClass("d-none");
+  $(".unvalid-end-date").addClass("d-none");
   $(
     `<div><li class="list-group-item list-group-item-action"><span class="fw-bold">Employee Name:</span>  ${employeeData[0].firstname} ${employeeData[0].lastname}</li><li class="list-group-item list-group-item-action"><span class="fw-bold">Date:</span>  ${choosedDateReport.date}</li><li class="list-group-item list-group-item-action"><span class="fw-bold">Arrival Time:</span> ${choosedDateReport.arrival_time}</li><li class="list-group-item list-group-item-action"><span class="fw-bold">Departure Time:</span>  ${choosedDateReport.departure_time}</li> <li class="list-group-item list-group-item-action"><span class="fw-bold">Status:</span>  ${choosedDateReport.status}</li>
-    <li class="list-group-item list-group-item-action"><span class="fw-bold">Delay:</span>  ${choosedDateReport.delay}</li></div>`
+    <li class="list-group-item list-group-item-action"><span class="fw-bold">Delay:</span>  ${choosedDateReport.delay} minute</li></div>`
   ).appendTo("#report-data");
 }
 
-function displayRangeCalender(){
+function displayRangeCalender() {
+  $(".daily-calender").addClass("d-none");
+  $("#report-data").addClass("d-none");
   $(".monthly-calender").removeClass("d-none");
-  $('input[name="daterange"]').daterangepicker({
-    opens: 'right'
-  }, function(start, end, label) {
-    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-  });
+  $('input[name="daterange"]').daterangepicker(
+    {
+      opens: "right",
+    },
+    async function (start, end, label) {
+      console.log(
+        `A new date selection was made: ${start.format("YYYY-MM-DD")} to ${end.format("YYYY-MM-DD")}`
+      );
+      $("#monthly-report-data").html("");
+      const startDate = start.format("YYYY-MM-DD");
+      const endDate = end.format("YYYY-MM-DD");
 
+      let employeeAttendance = await getSpecificEmployeeAttendance(
+        localStorage.getItem("currentUserName")
+      );
+      console.log(employeeAttendance, startDate, endDate);
+      let startIndex = employeeAttendance.findIndex(
+        (item) => item.date.trim() === startDate.trim()
+      );
+      let endIndex = employeeAttendance.findIndex(
+        (item) => item.date.trim() === endDate.trim()
+      );
+      console.log(startIndex, endIndex);
+      if (startIndex != -1 && endIndex != -1) {
+        console.log("no data on that day");
+        $("#monthly-report-container").removeClass("d-none");
+        $(".unvalid-start-date").addClass("d-none");
+        $(".unvalid-end-date").addClass("d-none");
+        $(`<thead>
+         <tr><th>Date</th> <th>Arrival Time</th> <th>Departure Time</th> <th>Status</th> <th>Delay</th></tr>
+        </thead> `).appendTo("#monthly-report-data");
+        let tbodyElement = $("<tbody>/tbody>");
+        for (let i = startIndex; i <= endIndex; i++) {
+          $(`
+           <tr><td>${employeeAttendance[i].date}</td> <td>${employeeAttendance[i].arrival_time}</td> <td>${employeeAttendance[i].departure_time}</td> <td>${employeeAttendance[i].status}</td> <td>${employeeAttendance[i].delay}</td> </tr> 
+        
+        `).appendTo(tbodyElement);
+        }
+        tbodyElement.appendTo("#monthly-report-data");
+        $("#monthly-report-data").DataTable();
+      } else if (startIndex == -1 && endIndex == -1) {
+        $("#monthly-report-container").addClass("d-none");
+        $(".unvalid-end-date").removeClass("d-none");
+        $(".unvalid-start-date").removeClass("d-none");
+      } else if (startIndex == -1) {
+        $("#monthly-report-container").addClass("d-none");
+        $(".unvalid-start-date").removeClass("d-none");
+        $(".unvalid-end-date").addClass("d-none");
+      } else {
+        $(".unvalid-end-date").removeClass("d-none");
+        $("#monthly-report-container").addClass("d-none");
+        $(".unvalid-start-date").addClass("d-none");
+      }
+    }
+  );
 }
-
-
 
 function logout() {
   window.location.href = "http://127.0.0.1:5500/attendance_website/login.html";
-  localStorage.removeItem('currentUserName')
+  localStorage.removeItem("currentUserName");
 }

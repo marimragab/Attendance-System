@@ -48,3 +48,37 @@ How to control refreshing page after send request using fetch?????
 
 ** If the employee chooses day we dispaly its report but if he then chooses another day,
  if we display the two reports or the last one only?
+
+
+ *** Holidays on friday and saturday (save on database)
+     Absence days 
+     Status "excuse"
+     change the displaying way of date on the old data (attendance array)
+
+Is its better to save the attendance array on separate array of all the employees,(attendance object with employee id)????
+
+**aj4wdx0  (employee for testing have attendance array)
+-- on displaying delay represent it as hour is it more than one hour
+-- if the start or end date on dispalying monthly report have no data
+-- In the UI something shows that user had choosed daily report or monthly to display 
+
+*** Monthly REport (many if conditions,find another way if it is possible)
+
+//TODO 
+*** After security man confirm attendance show something that ensure that (ex:alert telling that he has confirmed employee name attendance 
+or saving the employees he confirmed their attendance on array and display them on his profile)
+** Making adding and removing classes on displaying reports more generic if you can
+
+
+****Change Attenddance:
+Arrival button: disabled after the employee clicks for the first time --> save arrived on local storage ----> send notification to 
+security man that (employee user name has arrived) -----> the message containing "arrived" word so the security man record that as his
+arrival and check its status (late - on time)
+
+(the arrival button remains disabled until the employee record his departure using departure button)
+
+if the employee tries to record his attendance after work hours ("15:30:00")  or before "07:00:00" we doesnot save that data
+(search if you can disable arrival and departure buttons on specific time)
+
+--Departure Button: almost the same as arrival but in that case we does not add new attendance object but update the existed one with 
+departure time and if he departed before "15":30:00" we set status as "excuse"

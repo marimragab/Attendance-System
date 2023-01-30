@@ -115,7 +115,8 @@
           "date": " 2023-01-27",
           "arrival_time": " 11:41:14",
           "delay": 191.23333333333332,
-          "departure_time": "15:30:00"
+          "departure_time": "15:30:00",
+          "status": "late"
         },
         {
           "day": " Satday",
@@ -237,7 +238,22 @@
       "age": 42,
       "role": "employee",
       "isconfirmed": true,
-      "attendance": [],
+      "attendance": [
+        {
+          "day": " Monday",
+          "date": " 2023-01-30",
+          "arrival_time": " 08:11:06",
+          "departure_time": " 08:15:22",
+          "status": "on-time",
+          "delay": 0
+        },
+        {
+          "day": " Monday",
+          "date": " 2023-01-30",
+          "arrival_time": " 08:15:22",
+          "departure_time": "15:30:00"
+        }
+      ],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/360.jpg"
     },
     {
@@ -251,13 +267,7 @@
       "age": 38,
       "role": "employee",
       "isconfirmed": true,
-      "attendance": [
-        {
-          "day": " Friday",
-          "date": " 2023-01-27",
-          "time": " 14:16:35"
-        }
-      ],
+      "attendance": [],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/659.jpg"
     },
     {
@@ -327,7 +337,7 @@
           "arrival_time": "14:28:10",
           "departure_time": "15:30:00",
           "status": "late",
-          "delay_period": 358.16666666666663
+          "delay": 358.16666666666663
         }
       ],
       "id": 21
@@ -348,14 +358,14 @@
           "arrival_time": "13:51:25",
           "departure_time": "15:30:00",
           "status": "late",
-          "delay_period": 321.41666666666663
+          "delay": 321.41666666666663
         },
         {
           "date": "24/01/2023",
           "arrival_time": "4:39:7",
           "departure_time": "15:30:00",
           "status": "late",
-          "delay_period": 230.88333333333333
+          "delay": 230.88333333333333
         }
       ],
       "id": 22
@@ -376,7 +386,7 @@
           "arrival_time": "09:16:11",
           "departure_time": "15:30:00",
           "status": "late",
-          "delay_period": 46.18333333333333
+          "delay": 46.18333333333333
         }
       ],
       "id": 23
@@ -436,7 +446,7 @@
           "arrival_time": "4:56:48",
           "departure_time": "15:30:00",
           "status": "late",
-          "delay_period": 213.2
+          "delay": 213.2
         }
       ],
       "id": 27
@@ -457,7 +467,7 @@
           "arrival_time": "4:15:35",
           "departure_time": "15:30:00",
           "status": "late",
-          "delay_period": 254.41666666666669
+          "delay": 254.41666666666669
         }
       ],
       "id": 28
@@ -555,13 +565,7 @@
       "age": "32",
       "role": "employee",
       "isconfirmed": true,
-      "attendance": [
-        {
-          "day": " Friday",
-          "date": " 2023-01-27",
-          "time": " 14:23:35"
-        }
-      ],
+      "attendance": [],
       "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
       "id": 37
     },
@@ -645,14 +649,6 @@
       "id": 4
     }
   ],
-  "attendance-notifications": [
-    {
-      "day": "Satday",
-      "date": "2023-01-28",
-      "time": "04:07:24",
-      "username": "seym5vt",
-      "id": 1
-    }
-  ],
+  "attendance-notifications": [],
   "departure-notifications": []
 }
