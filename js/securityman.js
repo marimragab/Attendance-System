@@ -9,6 +9,8 @@ import {
   getEmployeeUsernameToConfirmAttendance,
 } from "./attendance.js";
 
+import {logout} from './../utilities/employee.js'
+
 $(function () {
   let currentuser = localStorage.getItem("currentSecurityMan");
   console.log(currentuser);
@@ -26,8 +28,8 @@ $(function () {
   displayAttendanceNotifications();
   displayDepartureNotifications();
   $("#confirm-attendance").on("click", confirmAttendance);
+  $('.logout-icon').click(logout)
 });
-
 
 async function displayAttendanceNotifications() {
   let attendanceNotifications = await getAttendanceNotifications();
@@ -58,9 +60,7 @@ async function displayDepartureNotifications() {
   let notificationNumbers =
     attendanceNotifications.length + departureNotifications.length;
   $("#notifications-number").html(notificationNumbers);
-  // document.querySelector("#notifications-number").innerHTML+=departureNotifications.length;
   $.each(departureNotifications, function (index, value) {
-    // console.log(value)
     let confirmButton = $(
       `<button class="btn btn-outline-success btn-sm me-1" type="button">Choose</button>`
     );

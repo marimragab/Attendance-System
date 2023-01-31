@@ -11,7 +11,18 @@
       "age": 32,
       "role": "employee",
       "isconfirmed": true,
-      "attendance": [],
+      "attendance": [
+        {
+          "day": " Monday",
+          "date": " 2023-01-30",
+          "arrival_time": " 10:17:31",
+          "departure_time": " 10:18:20",
+          "status": "late",
+          "delay": 107.51666666666667,
+          "departure_status": "excuse",
+          "early_departure_period": 311.6666666666667
+        }
+      ],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/906.jpg"
     },
     {
@@ -168,7 +179,18 @@
       "age": 38,
       "role": "employee",
       "isconfirmed": true,
-      "attendance": [],
+      "attendance": [
+        {
+          "day": " Tueday",
+          "date": " 2023-01-31",
+          "arrival_time": " 07:16:15",
+          "departure_time": " 07:31:14",
+          "status": "on-time",
+          "delay": 0,
+          "departure_status": "excuse",
+          "early_departure_period": 478.7666666666667
+        }
+      ],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/701.jpg"
     },
     {
@@ -242,16 +264,10 @@
         {
           "day": " Monday",
           "date": " 2023-01-30",
-          "arrival_time": " 08:11:06",
-          "departure_time": " 08:15:22",
-          "status": "on-time",
-          "delay": 0
-        },
-        {
-          "day": " Monday",
-          "date": " 2023-01-30",
-          "arrival_time": " 08:15:22",
-          "departure_time": "15:30:00"
+          "arrival_time": " 08:45:09",
+          "departure_time": "15:30:00",
+          "status": "late",
+          "delay": 15.15
         }
       ],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/360.jpg"
@@ -297,12 +313,14 @@
       "isconfirmed": true,
       "attendance": [
         {
-          "day": " Friday",
-          "date": " 2023-01-27",
-          "arrival_time": " 10:16:24",
-          "delay": 106.4,
-          "departure_time": " 19:41:14",
-          "status": "late"
+          "day": " Monday",
+          "date": " 2023-01-30",
+          "arrival_time": " 09:56:29",
+          "departure_time": " 09:53:13",
+          "status": "late",
+          "delay": 86.48333333333333,
+          "departure_status": "excuse",
+          "early_departure_period": 336.7833333333333
         }
       ],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/31.jpg"
@@ -473,33 +491,6 @@
       "id": 28
     },
     {
-      "username": "X6l3wN",
-      "password": "bNkAp@43",
-      "firstname": "mayada",
-      "lastname": "omar",
-      "address": "damietta",
-      "email": "asdf.ds110@gmail.com",
-      "age": "23",
-      "isconfirmed": false,
-      "attendance": [],
-      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
-      "id": 29
-    },
-    {
-      "username": "apBbjo",
-      "password": "BKnki@43",
-      "firstname": "mayada",
-      "lastname": "omar",
-      "address": "Damietta",
-      "email": "asdf.ds110@gmail.com",
-      "age": "23",
-      "role": "employee",
-      "isconfirmed": false,
-      "attendance": [],
-      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
-      "id": 30
-    },
-    {
       "username": "KmWymj",
       "password": "4rgQp@43",
       "firstname": "heba",
@@ -612,16 +603,25 @@
       "id": 40
     },
     {
-      "username": "PD26442",
-      "password": "PD5235@43",
-      "firstname": "Omar",
+      "username": "PD70066",
+      "password": "PD2643@43",
+      "firstname": "Nour",
       "lastname": "Ahmed",
-      "address": "Mansoura",
-      "email": "mnb@qwee.nv",
-      "age": 20,
+      "address": "Mansoura-Egypt",
+      "email": "nour@af.fa",
+      "age": 22,
       "role": "employee",
       "isConfirmed": false,
-      "attendance": [],
+      "attendance": [
+        {
+          "day": " Tueday",
+          "date": " 2023-01-31",
+          "arrival_time": " 07:35:12",
+          "departure_time": "15:30:00",
+          "status": "on-time",
+          "delay": 0
+        }
+      ],
       "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
       "id": 41,
       "isconfirmed": true
@@ -641,14 +641,25 @@
   },
   "registeration-notifications": [
     {
-      "username": "PD26442",
-      "id": 1
-    },
-    {
       "username": "Dm142889",
       "id": 4
     }
   ],
-  "attendance-notifications": [],
+  "attendance-notifications": [
+    {
+      "day": "Tueday",
+      "date": "2023-01-31",
+      "time": "07:09:43",
+      "username": "mvkoxxi",
+      "id": 2
+    },
+    {
+      "day": "Tueday",
+      "date": "2023-01-31",
+      "time": "07:14:16",
+      "username": "mvkoxxi",
+      "id": 3
+    }
+  ],
   "departure-notifications": []
 }

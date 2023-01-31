@@ -68,7 +68,8 @@ Is its better to save the attendance array on separate array of all the employee
 *** After security man confirm attendance show something that ensure that (ex:alert telling that he has confirmed employee name attendance 
 or saving the employees he confirmed their attendance on array and display them on his profile)
 ** Making adding and removing classes on displaying reports more generic if you can
-
+--Put the local host on variable
+-- Main Page for the website containing sign in and sign up buttons (interface to website)
 
 ****Change Attenddance:
 Arrival button: disabled after the employee clicks for the first time --> save arrived on local storage ----> send notification to 
@@ -76,9 +77,39 @@ security man that (employee user name has arrived) -----> the message containing
 arrival and check its status (late - on time)
 
 (the arrival button remains disabled until the employee record his departure using departure button)
+-- set holidays days
 
 if the employee tries to record his attendance after work hours ("15:30:00")  or before "07:00:00" we doesnot save that data
 (search if you can disable arrival and departure buttons on specific time)
 
 --Departure Button: almost the same as arrival but in that case we does not add new attendance object but update the existed one with 
 departure time and if he departed before "15":30:00" we set status as "excuse"
+
+--Record security man attendance on login and departure on logout 
+
+
+--On Admin Dashboard:
+Today Report: get the date of today---> display all employees attendance data on that day 
+getallemployees ----> loop through them and display last item on the array of it has 
+the same date as current day
+
+Daily Report: calender ---> choose specifice date -->get employees data on that day
+
+*******tody report and daily report make them generic as they are the same different on the day only
+
+??? can i use the same table element to display different data (same table sometimes containing employees data 
+and another time report data) ****fint out that later
+
+
+
+--TODO later
+  - profile pages for all.
+  - Interface page for website
+  - Showing descriptive messages when: 
+    employee click arrival button or departure
+    security confirm specific employee attendance
+    admin confirm specific employee registeration
+  - Edit Confirmation page style and employee ,security also.
+  - Attendance logic update to add holidays and prevent employees from clicking arrival or departure buttons after 
+    work hours or on holidays.
+  - Revise all the project logic 

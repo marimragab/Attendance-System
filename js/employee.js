@@ -5,7 +5,7 @@ import {
   getDailyReport,
   getSpecificEmployeeAttendance,
 } from "./../requests/employee.js";
-import { getCurrentDayAndTime, getTodayDate } from "./../utilities/employee.js";
+import { getCurrentDayAndTime, getTodayDate,logout } from "./../utilities/employee.js";
 
 window.addEventListener("load", function () {
   // set the value of input date to today date
@@ -15,8 +15,8 @@ window.addEventListener("load", function () {
   console.log(currentUser);
   displayCurrentEmployeeData(currentUser);
 
-  $("#arrival-btn").click(recordArrival);
-  $("#departure-btn").click(recordDeparture);
+  $("#arrival-btn").on("click",recordArrival);
+  $("#departure-btn").on("click",recordDeparture);
 
   if (localStorage.getItem("arrived")) {
     $("#arrival-btn").addClass("disabled");
@@ -78,6 +78,8 @@ function chooseDateToDisplayItsReport() {
     let todayDate = getTodayDate();
     console.log(todayDate, "today is");
     if (choosedDate > todayDate) {
+      $("#report-data").addClass("d-none");
+      // $(".daily-calender").addClass("d-none");
       $(".unvalid-date").removeClass("d-none");
     } else {
       $(".unvalid-date").addClass("d-none");
@@ -118,7 +120,9 @@ function displayRangeCalender() {
     },
     async function (start, end, label) {
       console.log(
-        `A new date selection was made: ${start.format("YYYY-MM-DD")} to ${end.format("YYYY-MM-DD")}`
+        `A new date selection was made: ${start.format(
+          "YYYY-MM-DD"
+        )} to ${end.format("YYYY-MM-DD")}`
       );
       $("#monthly-report-data").html("");
       const startDate = start.format("YYYY-MM-DD");
@@ -169,7 +173,4 @@ function displayRangeCalender() {
   );
 }
 
-function logout() {
-  window.location.href = "http://127.0.0.1:5500/attendance_website/login.html";
-  localStorage.removeItem("currentUserName");
-}
+

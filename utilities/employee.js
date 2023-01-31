@@ -86,6 +86,12 @@ function getTodayDate() {
   return todayDate.trim();
 }
 
+function logout() {
+  window.location.href = "http://127.0.0.1:5500/attendance_website/login.html";
+  // localStorage.removeItem("currentUserName");
+  // localStorage.clear()
+}
+
 export {
   generateRandomCode,
   Employee,
@@ -94,4 +100,5 @@ export {
   getDifferenceInHours,
   generateDate,
   getTodayDate,
+  logout
 };

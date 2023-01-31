@@ -42,74 +42,83 @@ function confirmAttendance() {
       attendnceObj.departure_time = formalDepartureTime;
       console.log(attendnceObj);
 
-      if (employeeData[0].attendance.length != 0) {
+      if (employeeData[0].attendance.length > 0) {
         let attendanceArray = employeeData[0].attendance;
         console.log(employeeData[0].attendance);
 
         let lastDay = attendanceArray[attendanceArray.length - 1];
-        if (lastDay.date == attendnceObj.date) {
+        console.log(lastDay, attendnceObj);
+        if (lastDay.date.trim() == attendnceObj.date.trim()) {
           let removeLastDayFromAttendanceArray = attendanceArray.splice(
             0,
             attendanceArray.length - 1
           );
+          console.log(lastDay,"before")
+
           lastDay.departure_time = attendnceObj.arrival_time;
-          console.log(lastDay);
+          console.log(lastDay, removeLastDayFromAttendanceArray);
+          console.log(lastDay,"after")
+          let departureStatus=checkDepartureTime(lastDay.departure_time);
+          lastDay = { ...lastDay, ...departureStatus };
           updateDepartureTime(
             employeeData[0].id,
             removeLastDayFromAttendanceArray,
             lastDay
           );
-          // deleteDepartureNotification(notificationId);
-        } else if (
-          generateDate(attendnceObj.arrival_time.trim()) >=
-          generateDate(formalAttendanceTime)
-        ) {
-          attendnceObj.status = "late";
-          attendnceObj.delay =
-            getDifferenceInHours(
-              attendnceObj.arrival_time,
-              formalAttendanceTime
-            ) * 60;
-        } else if (
-          generateDate(attendnceObj.arrival_time.trim()) <=
-          generateDate(formalAttendanceTime)
-        ) {
-          attendnceObj.status = "on-time";
-          attendnceObj.delay = 0;
+          deleteDepartureNotification(notificationId);
+        } else {
+          let status = checkArrivalStatus(attendnceObj.arrival_time);
+          console.log(status);
+          attendnceObj = { ...attendnceObj, ...status };
+          console.log(attendnceObj);
+          updateEmployeeAttendance(
+            employeeData[0].id,
+            employeeData[0].attendance,
+            attendnceObj
+          );
+          deleteNotification(notificationId);
         }
-        updateEmployeeAttendance(
-          employeeData[0].id,
-          employeeData[0].attendance,
-          attendnceObj
-        );
-        deleteNotification(notificationId);
+       
       } else {
-        if (
-          generateDate(attendnceObj.arrival_time.trim()) >=
-          generateDate(formalAttendanceTime)
-        ) {
-          attendnceObj.status = "late";
-          attendnceObj.delay =
-            getDifferenceInHours(
-              attendnceObj.arrival_time,
-              formalAttendanceTime
-            ) * 60;
-        }else {
-          attendnceObj.status = "on-time";
-          attendnceObj.delay = 0;
-        }
+        let status = checkArrivalStatus(attendnceObj.arrival_time);
+        console.log(status);
+        attendnceObj = { ...attendnceObj, ...status };
+        console.log(attendnceObj);
         updateEmployeeAttendance(
           employeeData[0].id,
           employeeData[0].attendance,
           attendnceObj
         );
         // deleteDepartureNotification(notificationId);
+        deleteNotification(notificationId);
       }
     });
   }
-  console.log("Confirm Attendance Clicked");
 }
 
-function checkArrivalStatus() {}
+function checkArrivalStatus(arrivalTime) {
+  if (generateDate(arrivalTime.trim()) >= generateDate(formalAttendanceTime)) {
+    return {
+      status: "late",
+      delay: getDifferenceInHours(arrivalTime, formalAttendanceTime) * 60,
+    };
+  } else {
+    return { status: "on-time", delay: 0 };
+  }
+}
+
+function checkDepartureTime(departuretime){
+  if (generateDate(departuretime.trim()) <= generateDate(formalDepartureTime)) {
+    return {
+      departure_status: "excuse",
+      early_departure_period: getDifferenceInHours(departuretime, formalDepartureTime) * 60,
+    };
+  } else {
+    return {
+      departure_status: "normal-departure",
+      early_departure_period: 0,
+    };
+  }
+}
 
 export { confirmAttendance, getEmployeeUsernameToConfirmAttendance };

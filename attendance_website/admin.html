@@ -15,8 +15,28 @@
     <link rel="stylesheet" href="./../libraries/bootstrap.css" />
     <script src="./../libraries/bootstrap.bundle.js"></script>
 
-	<!-- JQuery -->
-	<script src="./../libraries/jquery-3.1.1.js"></script>
+    <!-- for bootstrap datatable -->
+    <script src="./../libraries/jquery-3.1.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+    <!-- for bootstrap datatable -->
+
+    <!-- Link for JQuery datepicker -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+    <!-- Link for JQuery datepicker -->
+
     <!-- My CSS -->
     <link rel="stylesheet" href="./../css/admin.css" />
     <script src="./../js/adminDashboard.js" type="module"></script>
@@ -46,19 +66,25 @@
         </li>
         <li>
           <a href="#">
+            <i class="fa-solid fa-calendar-day icon"></i>
+            <span class="text">Today Report</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
             <i class="fa-solid fa-bars-progress icon"></i>
-            <span class="text">Reports</span>
+            <span class="text">Daily Report</span>
           </a>
         </li>
         <li>
           <a href="#">
-			<i class="fa-regular fa-bell icon"></i>
-            <span class="text">Notifications</span>
+            <i class="fa-solid fa-calendar-days icon"></i>
+            <span class="text">Monthly Report</span>
           </a>
         </li>
         <li>
           <a href="#">
-			<i class="fa-regular fa-user icon"></i>
+            <i class="fa-regular fa-user icon"></i>
             <span class="text">Profile</span>
           </a>
         </li>
@@ -88,7 +114,7 @@
           </div>
         </form>
 
-        <div class="dropdown notifications" >
+        <div class="dropdown notifications">
           <i
             class="dropdown-toggle fa-solid fa-bell fs-3"
             type="button"
@@ -98,7 +124,11 @@
           >
           </i>
           <span class="notifications-number">0</span>
-          <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuButton1" id="notifications-menu">
+          <ul
+            class="dropdown-menu scrollable-menu"
+            aria-labelledby="dropdownMenuButton1"
+            id="notifications-menu"
+          >
             <!-- <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li> -->
@@ -115,10 +145,10 @@
       <main>
         <div class="head-title">
           <div class="left">
-            <h1>Dashboard</h1>
+            <h1 class="current-menu-name">Dashboard</h1>
             <ul class="breadcrumb">
               <li>
-                <a href="#">Dashboard</a>
+                <a href="#" class="current-menu-name">Dashboard</a>
               </li>
               <span>&lt</span>
               <li>
@@ -126,8 +156,98 @@
               </li>
             </ul>
           </div>
-        </div>    
+        </div>
+
+        <div class="container text-center lead data-analysis">
+          <div class="row ms-5 justify-content-lg-evenly flex-wrap">
+            <div class="card rounded col-lg-3 col-6 p-3 me-2 mb-2">
+              <p>All Employees</p>
+              <h3 class="employees-number fw-bold text-primary"></h3>
+            </div>
+            <div class="card rounded col-lg-3 col-6 p-2 me-2 mb-2">
+              <p>Confirmed Employees</p>
+              <h3 class="employees-confirmed fw-bold text-primary"></h3>
+            </div>
+            <div class="card rounded col-lg-3 col-6 p-2 me-2 mb-2">
+              <p>Securitymans</p>
+              <h3 class="securitymans-number fw-bold text-primary"></h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Employees Data -->
+        <div
+          class="card my-3 h-lg-25 ms-lg-4 shadow-sm p-3 mb-5 bg-body rounded d-none"
+          id="employees-data"
+        >
+          <table
+            id="employees-data-table"
+            class="table text-center table-hover col-lg-6"
+          ></table>
+        </div>
+        <!-- Employees Data -->
+
+        <!-- Today Report-->
+        <div
+          class="card my-3 h-lg-25 ms-4 shadow-sm p-3 mb-5 bg-body rounded d-none"
+          id="daily-report-container"
+        >
+          <table
+            id="daily-report-table"
+            class="table text-center table-hover"
+            style="width: 100%"
+          ></table>
+        </div>
+        <!-- Today Report -->
+
+        <!-- calender daily -->
+        <div class="card col-lg-4 col-8 ms-4 d-none daily-calender">
+          <input
+            type="date"
+            name="daily-report"
+            placeholder="yyyy-mm-dd"
+            value=""
+            min="2023-01-25"
+            max="2030-12-31"
+            class="card-body form-control today-date"
+          />
+          <span class="d-none text-danger date-error"
+            >Please choose specific date to display its report</span
+          >
+        </div>
+        <span class="d-none text-danger ms-4 unvalid-date"
+          >Please choose valid date
+        </span>
+        <!-- calender daily-->
+
+        <!-- Calender Range -->
+        <div class="card col-lg-4 col-8 ms-4 monthly-calender d-none">
+          <input type="text" name="daterange" value="choose Range of Dates" />
+        </div>
+        <!-- Calender Range -->
+
+        <!-- Display Monthly Report -->
+        <div
+          class="card col-lg-11 my-3 h-lg-25 ms-4 shadow-sm p-3 mb-5 bg-body rounded d-none"
+          id="monthly-report-container"
+        >
+          <table
+            id="monthly-report-data"
+            class="table table-striped"
+            style="width: 100%"
+          ></table>
+        </div>
+
+        <span class="d-none text-danger unvalid-start-date ms-4"
+          >No Available Data On the start Date,choose another start date</span
+        ><br />
+        <span class="d-none text-danger unvalid-end-date ms-4"
+          >No Available Data On the end Date,choose another end date</span
+        >
+
+        <!-- Display Monthly Report -->
       </main>
+
       <!-- MAIN-->
     </section>
   </body>
