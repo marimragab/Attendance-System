@@ -42,6 +42,7 @@
     <script src="./../js/adminDashboard.js" type="module"></script>
 
     <title>Admin</title>
+    <link rel="icon" href="./../images/person-solid.svg" type="image/x-icon" />
   </head>
   <body>
     <!-- SIDEBAR -->
@@ -76,12 +77,12 @@
             <span class="text">Daily Report</span>
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="#">
             <i class="fa-solid fa-calendar-days icon"></i>
             <span class="text">Monthly Report</span>
           </a>
-        </li>
+        </li> -->
         <li>
           <a href="#">
             <i class="fa-regular fa-user icon"></i>
@@ -107,7 +108,7 @@
         <a href="#" class="nav-link">Employees Attendance</a>
         <form action="#">
           <div class="form-input">
-            <input type="search" placeholder="Search..." />
+            <input type="search" placeholder="Search..." id="employee-search" />
             <button type="submit" class="search-btn">
               <i class="fa-solid fa-magnifying-glass icon" id="search-icon"></i>
             </button>
@@ -172,8 +173,17 @@
               <p>Securitymans</p>
               <h3 class="securitymans-number fw-bold text-primary"></h3>
             </div>
+            <!-- <div class="card rounded col-lg-11 col-6 p-2 me-2 my-5">
+              <p>Wait Confirming</p>
+              <h3 class="waiting-number fw-bold text-primary"></h3>
+            </div> -->
           </div>
         </div>
+
+        <table
+          id="employees-table"
+          class="table text-center table-hover col-lg-6 mt-5"
+        ></table>
 
         <!-- Employees Data -->
         <div
