@@ -25,7 +25,7 @@ class Employee {
   email;
   age;
   role;
-  isConfirmed = false;
+  isconfirmed = false;
   attendance = [];
   avatar =
     "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png";
@@ -38,7 +38,7 @@ class Employee {
     email,
     age,
     role,
-    isConfirmed = false,
+    isconfirmed = false,
     attendance = [],
     avatar = "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png"
   ) {
@@ -81,15 +81,35 @@ function generateDate(time) {
 
 function getTodayDate() {
   const today = new Date();
-  const todayDate =
-    today.getFullYear() + "-" + today.getMonth() + 1 + "-" + today.getDate();
-  return todayDate.trim();
+  const todayDate = today.toISOString().slice(0, 10);
+  return todayDate;
 }
 
 function logout() {
   window.location.href = "http://127.0.0.1:5500/attendance_website/login.html";
   // localStorage.removeItem("currentUserName");
   // localStorage.clear()
+}
+
+function formatTime(timeString) {
+  const time = new Date(`1970-01-01T${timeString}Z`);
+  if (isNaN(time.getTime())) {
+    console.error(`Invalid time string: ${timeString}`);
+    return "";
+  }
+  const hours = time.getHours();
+  const minutes = time.getMinutes();
+  if (isNaN(minutes)) {
+    console.error(`Invalid time string: ${timeString}`);
+    return "";
+  }
+  const ampm = hours >= 12 ? "PM" : "AM";
+  const formattedHours = hours % 12 || 12;
+  const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+  const formattedTime = `${formattedHours
+    .toString()
+    .padStart(2, "0")}:${formattedMinutes} ${ampm}`;
+  return formattedTime;
 }
 
 export {
@@ -100,5 +120,6 @@ export {
   getDifferenceInHours,
   generateDate,
   getTodayDate,
-  logout
+  logout,
+  formatTime,
 };
