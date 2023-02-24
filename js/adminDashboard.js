@@ -7,6 +7,7 @@ import {
   deleteNotification,
 } from "../requests/admin.js";
 
+import { getEmployeeData } from "./../requests/employee.js";
 import { logout, getTodayDate } from "./../utilities/employee.js";
 
 window.addEventListener("load", function () {
@@ -29,6 +30,7 @@ window.addEventListener("load", function () {
           $(".data-analysis").removeClass("d-none");
           $("#daily-report-container").addClass("d-none");
           $(".daily-calender").addClass("d-none");
+          $("#employees-table").addClass("d-none");
           break;
 
         case "Employees":
@@ -37,6 +39,7 @@ window.addEventListener("load", function () {
           $(".data-analysis").addClass("d-none");
           $("#daily-report-container").addClass("d-none");
           $(".daily-calender").addClass("d-none");
+          $("#employees-table").addClass("d-none");
           break;
 
         case "Today Report":
@@ -44,6 +47,7 @@ window.addEventListener("load", function () {
           $("#employees-data").addClass("d-none");
           $(".data-analysis").addClass("d-none");
           $(".daily-calender").addClass("d-none");
+          $("#employees-table").addClass("d-none");
           displayTodayReportForAllEmployees();
           break;
 
@@ -53,6 +57,7 @@ window.addEventListener("load", function () {
           $(".data-analysis").addClass("d-none");
           $("#daily-report-container").addClass("d-none");
           $(".daily-calender").removeClass("d-none");
+          $("#employees-table").addClass("d-none");
           chooseSpecificDayToDisplayAttendance();
           break;
 
@@ -62,6 +67,7 @@ window.addEventListener("load", function () {
           $(".data-analysis").addClass("d-none");
           $("#daily-report-container").addClass("d-none");
           $(".daily-calender").addClass("d-none");
+          $("#employees-table").addClass("d-none");
           break;
 
         default:
@@ -77,6 +83,84 @@ window.addEventListener("load", function () {
 
   const menuBar = document.querySelector("#menu-bar");
   const sidebar = document.querySelector("#sidebar");
+  const searchButton = document.querySelector("#search-icon");
+
+  const employeeTable = document.querySelector("#employees-table");
+
+  searchButton.addEventListener("click", async () => {
+    const employeeName = document.querySelector("#employee-search").value;
+    try {
+      const employee = await getEmployeeData(employeeName);
+      const employeeAttendance = employee[0].attendance;
+      console.log(employeeAttendance, employee);
+      const lateDays = employeeAttendance.filter(
+        (row) => row.status === "late"
+      ).length;
+      const absentDays = employeeAttendance.filter(
+        (row) => row.status === "absent"
+      ).length;
+      const excuseDays = employeeAttendance.filter(
+        (row) => row.departure_status === "execuse"
+      ).length;
+      const presentDays = employeeAttendance.length - absentDays - excuseDays;
+
+      employeeTable.innerHTML = `
+        <tr>
+          <td class="fw-bold fs-4">Name:</td>
+          <td>${employee[0].firstname} ${employee[0].lastname}</td>
+        </tr>
+        <tr>
+          <td class="fw-bold fs-4">Email:</td>
+          <td>${employee[0].email}</td>
+        </tr>
+        <tr>
+          <td class="fw-bold fs-4">Late Days:</td>
+          <td>
+          <button class="btn btn-danger">${lateDays}</button>
+          </td>  
+        </tr>
+        <tr>
+          <td class="fw-bold fs-4">Excused Days:</td>
+          <td>
+          <button class="btn btn-warning">${excuseDays}</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="fw-bold fs-5">Present Days:</td>
+          <td>
+          <button class="btn btn-success"> ${presentDays}</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="fw-bold fs-4">Attendance:</td>
+          <td>
+            <table>
+              <tr>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+              ${employeeAttendance
+                .map(
+                  (row) => `
+                <tr>
+                  <td>${row.date}</td>
+                  <td>${row.status}</td>
+                </tr>
+              `
+                )
+                .join("")}
+            </table>
+          </td>
+        </tr>
+      `;
+      // $("#employees-table").DataTable();
+    } catch (error) {
+      employeeTable.innerHTML = `<tr>
+          <td>${error.message}</td>
+        </tr>`;
+      console.log(error);
+    }
+  });
 
   window.addEventListener("resize", function () {
     if (this.innerWidth < 1050) {
