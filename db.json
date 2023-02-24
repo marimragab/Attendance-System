@@ -14,13 +14,57 @@
       "attendance": [
         {
           "day": " Monday",
-          "date": " 2023-01-30",
-          "arrival_time": " 10:17:31",
-          "departure_time": " 10:18:20",
+          "date": "2023-01-30",
+          "arrival_time": "10:17:31",
+          "departure_time": "10:18:20",
           "status": "late",
           "delay": 107.51666666666667,
           "departure_status": "excuse",
           "early_departure_period": 311.6666666666667
+        },
+        {
+          "day": " Tueday",
+          "date": " 2023-01-31",
+          "arrival_time": " 08:30:00",
+          "departure_time": "16:00:00",
+          "status": "on-time",
+          "delay": 0
+        },
+        {
+          "day": " Wedday",
+          "date": "2023-02-01",
+          "arrival_time": "09:17:31",
+          "departure_time": "14:00:00",
+          "status": "late",
+          "delay": 17.31,
+          "departure_status": "excuse",
+          "early_departure_period": 90
+        },
+        {
+          "day": " Thuday",
+          "date": " 2023-02-02",
+          "arrival_time": "10:17:31",
+          "departure_time": "10:18:20",
+          "status": "late",
+          "delay": 107.51666666666667,
+          "departure_status": "excuse",
+          "early_departure_period": 311.6666666666667
+        },
+        {
+          "day": "Satday",
+          "date": "2023-02-04",
+          "arrival_time": "08:17:31",
+          "departure_time": "15:40:20",
+          "status": "on-time",
+          "delay": 0
+        },
+        {
+          "day": " Friday",
+          "date": " 2023-11-24",
+          "arrival_time": " 07:55:44",
+          "departure_time": "15:30:00",
+          "status": "on-time",
+          "delay": 0
         }
       ],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/906.jpg"
@@ -611,7 +655,7 @@
       "email": "nour@af.fa",
       "age": 22,
       "role": "employee",
-      "isConfirmed": false,
+      "isconfirmed": false,
       "attendance": [
         {
           "day": " Tueday",
@@ -623,8 +667,35 @@
         }
       ],
       "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
-      "id": 41,
-      "isconfirmed": true
+      "id": 41
+    },
+    {
+      "username": "PD53954",
+      "password": "PD5631@43",
+      "firstname": "ASD",
+      "lastname": "SDFD",
+      "address": "Damietta",
+      "email": "mariamragab01@gmail.com",
+      "age": 25,
+      "role": "securityman",
+      "isconfirmed": true,
+      "attendance": [],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 42
+    },
+    {
+      "username": "PD10572",
+      "password": "PD5795@43",
+      "firstname": "Mariam",
+      "lastname": "Ragab",
+      "address": "Damietta ",
+      "email": "maryamragab@outlook.sa",
+      "age": 24,
+      "role": "employee",
+      "isconfirmed": true,
+      "attendance": [],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 43
     }
   ],
   "admin": {
@@ -645,21 +716,14 @@
       "id": 4
     }
   ],
-  "attendance-notifications": [
+  "attendance-notifications": [],
+  "departure-notifications": [
     {
-      "day": "Tueday",
-      "date": "2023-01-31",
-      "time": "07:09:43",
+      "day": "Friday",
+      "date": "2023-11-24",
+      "time": "10:49:20",
       "username": "mvkoxxi",
-      "id": 2
-    },
-    {
-      "day": "Tueday",
-      "date": "2023-01-31",
-      "time": "07:14:16",
-      "username": "mvkoxxi",
-      "id": 3
+      "id": 1
     }
-  ],
-  "departure-notifications": []
+  ]
 }
