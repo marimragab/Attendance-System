@@ -126,20 +126,6 @@
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/504.jpg"
     },
     {
-      "id": 6,
-      "username": "vod1dzb",
-      "password": "53ldUws3bV",
-      "firstname": "Titus",
-      "lastname": "Yost",
-      "address": "Breannaland-Albert Pass",
-      "email": "Enos30@gmail.com",
-      "age": 40,
-      "role": "employee",
-      "isconfirmed": false,
-      "attendance": [],
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/773.jpg"
-    },
-    {
       "id": 7,
       "username": "unxdawn",
       "password": "H7mqOxxAYt",
@@ -180,6 +166,16 @@
           "delay": 0,
           "departure_time": " 01:41:55",
           "status": "on-time"
+        },
+        {
+          "day": " Friday",
+          "date": " 2023-11-24",
+          "arrival_time": " 13:37:51",
+          "departure_time": " 13:35:00",
+          "status": "late",
+          "delay": 307.85,
+          "departure_status": "excuse",
+          "early_departure_period": 115
         }
       ],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1005.jpg"
@@ -233,6 +229,16 @@
           "delay": 0,
           "departure_status": "excuse",
           "early_departure_period": 478.7666666666667
+        },
+        {
+          "day": " Friday",
+          "date": " 2023-11-24",
+          "arrival_time": " 15:09:36",
+          "departure_time": " 16:03:00",
+          "status": "late",
+          "delay": 399.6,
+          "departure_status": "normal-departure",
+          "early_departure_period": 0
         }
       ],
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/701.jpg"
@@ -467,19 +473,6 @@
       "id": 24
     },
     {
-      "username": "PD00131",
-      "password": "PD059@43",
-      "firstname": "Samir",
-      "lastname": "Adel",
-      "address": "Damietta",
-      "email": "samir@sa.bv",
-      "age": "25",
-      "role": "employee",
-      "isconfirmed": false,
-      "attendance": [],
-      "id": 25
-    },
-    {
       "username": "PD45859",
       "password": "PD071@43",
       "firstname": "Mohamed",
@@ -696,6 +689,57 @@
       "attendance": [],
       "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
       "id": 43
+    },
+    {
+      "username": "PD66504",
+      "password": "PD5557@43",
+      "firstname": "Mariam",
+      "lastname": "Ragab",
+      "address": "Damietta- Faraskur-Al-Ghunaimiyah Next To  Elshahit Bahgat El-Taranisi School",
+      "email": "mariamragab110@gmail.com",
+      "age": 25,
+      "role": "employee",
+      "isconfirmed": false,
+      "attendance": [],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 44
+    },
+    {
+      "username": "PD84006",
+      "password": "PD8526@43",
+      "firstname": "Mariam",
+      "lastname": "Ragab",
+      "address": "Mansoura",
+      "email": "mariam.relshafei@yahoo.com",
+      "age": 27,
+      "role": "employee",
+      "isconfirmed": true,
+      "attendance": [
+        {
+          "day": " Friday",
+          "date": " 2023-11-24",
+          "arrival_time": " 17:28:49",
+          "departure_time": "15:30:00",
+          "status": "late",
+          "delay": 538.8166666666666
+        }
+      ],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 45
+    },
+    {
+      "username": "PD72770",
+      "password": "PD0947@43",
+      "firstname": "mariam",
+      "lastname": "Ragab",
+      "address": "Mansoura",
+      "email": "mariam.r.elshafei@gmail.com",
+      "age": 24,
+      "role": "employee",
+      "isconfirmed": false,
+      "attendance": [],
+      "avatar": "https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png",
+      "id": 46
     }
   ],
   "admin": {
@@ -710,20 +754,22 @@
     "isconfirmed": true,
     "avatar": "https://www.pngitem.com/pimgs/m/247-2472306_admin-anonymous-person-icon-hd-png-download.png"
   },
-  "registeration-notifications": [
-    {
-      "username": "Dm142889",
-      "id": 4
-    }
-  ],
-  "attendance-notifications": [],
-  "departure-notifications": [
+  "registeration-notifications": [],
+  "attendance-notifications": [
     {
       "day": "Friday",
       "date": "2023-11-24",
-      "time": "10:49:20",
-      "username": "mvkoxxi",
+      "time": "13:35:00",
+      "username": "seym5vt",
       "id": 1
+    },
+    {
+      "day": "Friday",
+      "date": "2023-11-24",
+      "time": "16:03:00",
+      "username": "c8n09mi",
+      "id": 2
     }
-  ]
+  ],
+  "departure-notifications": []
 }

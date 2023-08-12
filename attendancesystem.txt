@@ -1,0 +1,19 @@
+This is a JavaScript function named displayRangeCalender(). Here's what it does:
+
+It selects all elements with class daily-calender and adds the class d-none to hide them.
+It selects an element with id report-data and adds the class d-none to hide it.
+It selects all elements with class monthly-calender and removes the class d-none to show them.
+It calls the daterangepicker function on the input element with name daterange. This function initializes a date range picker widget and sets the options for it.
+The options object for daterangepicker specifies that the widget should open on the right side of the input element.
+It defines an async callback function that will be called whenever a new date range is selected in the widget.
+The callback function logs the selected date range to the console.
+It selects an element with id monthly-report-data and sets its HTML to an empty string.
+It gets the start and end dates of the selected date range in the format "YYYY-MM-DD".
+It calls an async function named getSpecificEmployeeAttendance with the current user's name as a parameter, and waits for it to return a result.
+It logs the result of getSpecificEmployeeAttendance, as well as the start and end dates of the selected range.
+It finds the index of the first occurrence of the start date and the last occurrence of the end date in the array returned by getSpecificEmployeeAttendance.
+If both the start and end dates are found in the array, it generates an HTML table with the attendance data for each day in the selected range and appends it to an element with id monthly-report-data.
+If neither the start nor end date is found in the array, it shows error messages by adding the classes unvalid-start-date and unvalid-end-date to specific elements, and hides the table by adding the class d-none to an element with id monthly-report-container.
+If only the start date is not found in the array, it shows an error message for the start date by adding the class unvalid-start-date to a specific element, and hides the table by adding the class d-none to an element with id monthly-report-container.
+If only the end date is not found in the array, it shows an error message for the end date by adding the class unvalid-end-date to a specific element, and hides the table by adding the class d-none to an element with id monthly-report-container.
+Overall, this function appears to be part of a larger application that involves tracking employee attendance and generating monthly reports. The daterangepicker library is used to provide a user interface for selecting a date range, and the getSpecificEmployeeAttendance function is likely used to retrieve attendance data from a server or database.

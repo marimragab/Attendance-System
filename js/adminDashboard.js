@@ -200,12 +200,12 @@ function displayAllEmployees() {
     );
     // $("#employees-data").removeClass("d-none");
     $(`<thead>
-    <tr><th>FullName</th> <th>Email</th> <th>Role</th> <th>Address</th> <th>Confirmed</th></tr>
+    <tr><th class="col-2 col-sm-2">FullName</th> <th class="col-2 col-sm-2">Email</th> <th class="d-none d-sm-table-cell">Role</th> <th class="d-none d-sm-table-cell">Address</th> <th class="col-2 col-sm-2">Confirmed</th></tr>
    </thead> `).appendTo("#employees-data-table");
     let tbodyElement = $("<tbody>/tbody>");
     for (let i = 0; i < employees.length; i++) {
       $(`
-      <tr><td>${employees[i].firstname} ${employees[i].lastname}</td> <td>${employees[i].email}</td> <td>${employees[i].role}</td> <td>${employees[i].address}</td> <td>${employees[i].isconfirmed}</td> </tr> 
+      <tr><td class="col-2 col-sm-2">${employees[i].firstname} ${employees[i].lastname}</td> <td class="col-2 col-sm-2 text-wrap text-break">${employees[i].email}</td> <td class="d-none d-sm-table-cell">${employees[i].role}</td> <td class="d-none d-sm-table-cell">${employees[i].address}</td> <td class="col-2 col-sm-2">${employees[i].isconfirmed}</td> </tr> 
    
    `).appendTo(tbodyElement);
     }
@@ -233,6 +233,8 @@ async function displayNotifications() {
     $("#notifications-menu").append(liItem);
 
     $(liItem).on("click", "button", adminConfirm);
+    // $(confirmButton).on("click", adminConfirm);
+    // $(cancelButton).on("click", adminCancel);
   });
 }
 
@@ -240,15 +242,25 @@ function adminConfirm() {
   let username = $(this).parent().find("span:eq(0)").html();
   let notificationId = $(this).parent().find("input").val();
 
+  console.log(notificationId, username);
   if ($(this).html() == "Confirm") {
     console.log("confirmed");
     confirmEmployee(username);
   } else {
     deleteEmployee(username);
-    console.log("cancelled");
+    // console.log("cancelled");
   }
   deleteNotification(notificationId);
 }
+
+// function adminCancel() {
+//   let username = $(this).parent().find("span:eq(0)").html();
+//   let notificationId = $(this).parent().find("input").val();
+//   console.log(notificationId, username);
+//   deleteEmployee(username);
+//   console.log("cancelled");
+//   deleteNotification(notificationId,);
+// }
 
 async function displayTodayReportForAllEmployees() {
   let allEmployees = await getAllEmployees();

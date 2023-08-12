@@ -113,3 +113,9 @@ and another time report data) ****fint out that later
   - Attendance logic update to add holidays and prevent employees from clicking arrival or departure buttons after 
     work hours or on holidays.
   - Revise all the project logic 
+
+
+  ---New Update:
+   i can add new bottom for confirm register and when message has departured 
+
+   مفروض أشوف لو الموظف جه يعمل وصول تاني بس بعد الحضور تاني
